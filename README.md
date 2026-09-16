@@ -1,74 +1,205 @@
 # Praline
 
-Praline is a local C parallelization prototype: helper-aware compiler analysis and source generation are supplied by the compiler core, while this task provides toolchain discovery, deterministic examples, compilation, whole-output validation, repeated timings and a plain HTML evidence report. It targets SegFault P05 with a focused C11 subset and a Clang adapter. It does not integrate ROSE.
+Praline helps you understand whether a C loop can safely run in parallel—even when it calls another function.
 
-## Install and reproduce
+It reads the code with Clang, checks what each helper function reads and writes, and explains its decision. For supported safe loops, it generates OpenMP code, checks the output, and measures the runtime.
 
-Python 3.11 or newer and Clang are required. No third-party Python runtime dependency is needed.
+Built for **SegFault 2026 · P05: Automatic Parallelizing Compiler for GPGPU with Interprocedural Analysis**.
+
+## What it does
+
+- Finds supported loops and follows their helper-function calls.
+- Identifies shared writes, dependencies between iterations, and unresolved pointer aliasing.
+- Reports each loop as **safe**, **unsafe**, or **unknown**, with source-level reasons.
+- Generates CPU OpenMP code and GPU target code with explicit data mappings.
+- Compares every output element against sequential execution and an independent reference.
+- Creates a local HTML report with analysis, generated code, validation, and timings.
+
+Praline supports a focused C11 subset. Unsupported or uncertain cases are reported rather than automatically parallelized.
+
+## Try it
+
+You need **Python 3.11+**, **Clang**, and an **OpenMP runtime** for CPU execution.
+
+On macOS, install the runtime if it is missing:
 
 ```sh
+brew install libomp
+```
+
+Clone the repository and run the demo:
+
+```sh
+git clone https://github.com/vianmangal/praline.git
+cd praline
+
 python3 -m venv .venv
-. .venv/bin/activate
+source .venv/bin/activate
 python -m pip install -e '.[test]'
+
 praline doctor --out runs/toolchain
 praline demo --out runs/demo
 ```
 
-Open `runs/demo/map-cpu/report.html` locally. The demo generates the helper map, checks every output element against sequential execution and an independent reference, records five trials after a warmup, analyzes the negative examples, and attempts GPU generation. No benchmark value is a speedup guarantee.
+Run these commands from the repository root. The doctor command checks the installed compiler and actually compiles and runs capability probes.
 
-During separate-worktree development, set `PRALINE_CORE_ROOT` to the compiler checkout. The CLI reports missing integration explicitly. The final combined checkout must include the core-owned modules and `docs/CONTRACT.md`; see [integration notes](submission/INTEGRATION.md). The examples are repository assets, so run the demo from the repository root or supply `--examples /path/to/examples`.
+Open **`runs/demo/map-cpu/report.html`** in your browser. On macOS:
 
-On this Mac, Apple Clang 21 with Homebrew libomp 23.1.1 passed a real two-thread OpenMP probe. If needed, `brew install libomp` provides the runtime. Doctor probes `-fopenmp` first, then the explicit Homebrew include/link flags on macOS. System `gcc` may be Apple Clang. GPU offload is **unavailable** on the current host.
+```sh
+open runs/demo/map-cpu/report.html
+```
 
-## Commands
+The demo analyzes the safe example, generates CPU code, validates its output, records timings, and analyzes several unsafe or uncertain examples. It also generates GPU source.
+
+## A simple example
+
+A loop might call a helper for each array element:
+
+```c
+static int apply(int value) {
+    return value * 3 + 1;
+}
+
+void map(const int *restrict input, int *restrict output, int n) {
+    for (int index = 0; index < n; ++index) {
+        output[index] = apply(input[index]);
+    }
+}
+```
+
+Praline checks the helper's effects, the array accesses, and the alias assumptions before generating a parallel loop. A read-only helper alone is not enough to establish safety.
+
+If the helper instead increments a shared global counter, Praline identifies the shared write and refuses the transformation.
+
+The `restrict` contract and valid array bounds are assumptions the caller must satisfy. Different pointer names do not establish separate buffers.
+
+## Use it step by step
+
+### 1. Analyze a program
 
 ```sh
 praline analyze examples/helper_map.c --out runs/map
-praline transform examples/helper_map.c --target cpu --out runs/map-cpu
-praline validate examples/helper_map.c --generated runs/map-cpu/generated.c --out runs/map-cpu --sizes 0,1,1024,65536,1048576 --seeds 1,7 --threads 2
-praline benchmark examples/helper_map.c --generated runs/map-cpu/generated.c --out runs/map-cpu --sizes 1024,65536,1048576 --seeds 1,7 --threads 1,2,4 --trials 5 --warmups 1
-praline transform examples/helper_map.c --target gpu --extent input=n --extent output=n --out runs/map-gpu
-praline analyze examples/global_write.c --out runs/unsafe
-praline report runs/map-cpu
-python -m pytest
 ```
 
-`--clang PATH` selects the analysis compiler. Repeated `--clang-arg=-I/path` forwards compiler flags. `--cc PATH` selects the execution compiler. `--extent input=n` supplies explicit extents, and `--assume-disjoint input,output` supplies an explicit user alias contract. These are assumptions, not inferred facts. The default map fixture uses valid restrict parameters and disjoint allocations. Negative examples must never produce a parallel patch.
-
-Exit codes: 0 successful command (including unsafe/unknown analysis), 1 compiler/runtime/unavailable error, 2 invalid invocation or refused transformation. Commands have configurable subprocess timeouts. Invalid protocol output, compiler errors, mismatches and missing GPU evidence are reported separately.
-
-## Execution protocol and evidence
-
-Validation and benchmarking accept the explicit `praline-output-v1` protocol, rather than arbitrary program stdout. Programs take `SIZE SEED MODE`, where mode is `validate`, `reference` or `benchmark`, and emit one JSON object. Validation/reference include every output element. All modes include protocol, size, seed, nonnegative kernel_seconds, checksum and auxiliary observables. The included runtime accepts up to 4,194,304 elements and unsigned 32-bit seeds. Larger validation output may hit the 32 MiB capture limit.
-
-Integers compare exactly. For `--numeric float`, `--atol` and `--rtol` set `abs(error) <= atol + rtol * abs(reference)`. NaN mismatches fail. `--no-reference` supports external protocol adapters without the example reference mode and is recorded in evidence. Passing tests are observed equivalence on those inputs, not a formal proof.
-
-Kernel timing excludes input allocation, initialization and output serialization equally across variants. End-to-end subprocess timing includes all those operations, process startup, checksum calculation, output, and harness launch/reaping overhead. A blocking OS wait avoids timeout-polling delays. Each timed trial starts a new process. Warmups are separate processes and do not imply persistent runtime/device caches. Raw trials, medians, max-minus-min spread, speedups, thread counts, source hashes, commands and environment are saved. GPU end-to-end timing must include transfers and synchronization.
-
-The execution harness does not calibrate a profitability model. Static recommendations remain `insufficient_evidence` when no calibration is supplied. The report displays actual workload-specific measurements separately.
-
-## Linux GPU recipe
-
-Use an existing compatible Linux OpenMP offload toolchain and device. Supply backend flags through `PRALINE_OFFLOAD_FLAGS`, for example the flags required by your installed Clang NVIDIA or AMD toolchain. No device architecture or driver version is assumed.
+### 2. Generate CPU OpenMP code
 
 ```sh
-export CC=/path/to/offload-capable/clang
-export PRALINE_OFFLOAD_FLAGS='YOUR_VERIFIED_BACKEND_FLAGS'
-praline doctor --out runs/gpu-doctor
-praline transform examples/helper_map.c --target gpu --extent input=n --extent output=n --out runs/map-gpu
-praline validate examples/helper_map.c --generated runs/map-gpu/generated.c --target gpu --out runs/map-gpu
+praline transform examples/helper_map.c --target cpu --out runs/map-cpu
 ```
 
-Doctor sets `OMP_TARGET_OFFLOAD=MANDATORY` and checks `omp_get_num_devices()` and `omp_is_initial_device()`. Validation additionally requires evidence from the actual generated kernel (`device.initial_device: false` in its output). The current example protocol has no generated-kernel device instrumentation. **That instrumentation and a GPU host are still required before GPU validation can pass.** Compilation or host fallback alone never counts as device verification. Capture GPU model, driver, backend and runtime versions on the eventual host.
+The original stays unchanged. The output directory contains the generated source, a diff, analysis JSON, and an HTML report.
 
-## Submission drafts
+### 3. Check the output
 
-[Manifest](submission/MANIFEST.md), [abstract](submission/abstract.md), [seven-slide content](submission/deck.md), and [recording script](submission/video-script.md) record completion states. Public repository/video links, authenticated organizer limits and final form upload are not supplied. No license has been chosen on behalf of the team.
+```sh
+praline validate examples/helper_map.c \
+  --generated runs/map-cpu/generated.c \
+  --out runs/map-cpu \
+  --sizes 0,1,1024,65536,1048576 \
+  --seeds 1,7 --threads 2
+```
 
-## Combined source snapshot
+### 4. Measure performance
 
-`python scripts/assemble_checkout.py --core-root /path/to/compiler-checkout --out runs/combined --archive submission/praline-source.tar.gz` creates a portable combined snapshot while copying compiler-owned files unchanged. It records a SHA-256 provenance manifest. Use a new output directory for each snapshot. Unpack the archive, install `.[test]`, and run the normal commands without `PRALINE_CORE_ROOT`. The source archive is a local artifact, not a published repository.
+```sh
+praline benchmark examples/helper_map.c \
+  --generated runs/map-cpu/generated.c \
+  --out runs/map-cpu \
+  --sizes 1024,65536,1048576 \
+  --seeds 1,7 --threads 1,2,4 \
+  --trials 5 --warmups 1
+```
 
-The deck can be regenerated with `scripts/build_deck.mjs` using the bundled presentation runtime (`RUNTIME_NODE_MODULES`, `RUNTIME_NODE`, `RUNTIME_PYTHON` and `RUNTIME_BIN_DIR`). Choose a new `PRALINE_DECK_OUTPUT` filename because the finalizer preserves prior output. `scripts/export_deck_pdf.py` assembles the reviewed PNG exports using bundled Pillow. CLI users do not need these artifact-creation dependencies.
+### 5. Inspect an unsafe example
 
-Recorded submission evidence is in [results](submission/results.md) and [the actual report](submission/evidence/map-cpu/report.html). The simple helper map shows OpenMP overhead on this host. GPU source has passed only a host syntax check. The submitted recording and public links still need to be created.
+```sh
+praline analyze examples/global_write.c --out runs/unsafe
+```
+
+Use `praline --help` or `praline <command> --help` for more options.
+
+## Examples
+
+| File | What it demonstrates |
+| --- | --- |
+| [helper_map.c](examples/helper_map.c) | A supported map with a safe helper call |
+| [global_write.c](examples/global_write.c) | A helper writes shared global state |
+| [prefix_dependency.c](examples/prefix_dependency.c) | One iteration depends on another |
+| [scatter_write.c](examples/scatter_write.c) | Iterations can write to the same element |
+| [alias_unknown.c](examples/alias_unknown.c) | Buffer separation cannot be established |
+| [unknown_call.c](examples/unknown_call.c) | A called function's effects are unknown |
+
+## What works today
+
+The integrated checkout passed **64 tests, with 3 skips** in the local verification run.
+
+Recorded CPU evidence includes **30 output-validation cases** and **300 timed executions** on an arm64 Mac using Apple Clang and Homebrew libomp.
+
+The simple helper-map benchmark was **slower with OpenMP** on this host. That result matters: a loop can be safe to parallelize without being worth parallelizing. We retain the raw measurements and do not claim universal speedup.
+
+GPU source is generated and has been checked with host-side OpenMP syntax checks. **Execution on a GPU has not been verified.** There are no GPU performance results.
+
+- [Recorded measurements](submission/results.md)
+- [Analysis and execution evidence](submission/evidence/)
+- [Submission status](submission/MANIFEST.md)
+
+## GPU code generation
+
+Generate GPU target directives with explicit buffer lengths:
+
+```sh
+praline transform examples/helper_map.c \
+  --target gpu \
+  --extent input=n --extent output=n \
+  --out runs/map-gpu
+```
+
+Running this code requires a compatible OpenMP offload compiler, runtime, and device. A Mac GPU is not assumed to provide that environment.
+
+On a compatible Linux host, configure `CC` and `PRALINE_OFFLOAD_FLAGS` for the installed backend, then run `praline doctor`. The probes require mandatory offload and check that execution happened on a non-host device.
+
+The current execution examples still need generated-kernel device instrumentation before GPU validation can pass. A successful compiler invocation or CPU fallback does not establish GPU execution.
+
+See [the compiler contract](docs/CONTRACT.md) for the compatible-host test recipe and supported generation details.
+
+## Reading the results
+
+The report keeps static analysis, assumptions, output validation, estimates, and measurements separate.
+
+- **Validation** checks tested inputs; it is not a proof for every possible input.
+- **Kernel time** measures the computation, excluding allocation and output formatting.
+- **End-to-end time** includes the process, initialization, output, and harness overhead.
+- **Trials** run in separate processes. Raw timings and their spread are retained.
+- **Target recommendations** stay `insufficient_evidence` when calibration is unavailable.
+
+Validation and benchmarking use the examples' `praline-output-v1` JSON protocol. To benchmark your own program, provide the same output adapter; arbitrary program output is not supported. Analysis and transformation do not require that protocol.
+
+## Development
+
+Run the tests:
+
+```sh
+python -m pytest -q
+```
+
+| Directory | Contents |
+| --- | --- |
+| `praline/frontend/` | Clang AST extraction |
+| `praline/analysis/` | Helper effects and loop dependency checks |
+| `praline/transform/` | CPU and GPU source generation |
+| `praline/execution/` | Compilation, validation, and benchmarks |
+| `praline/report/` | HTML evidence reports |
+| `examples/` | Runnable demo programs |
+| `tests/` | Unit and integration tests |
+| `submission/` | Deck, abstract, script, and recorded evidence |
+
+The project uses Clang rather than ROSE. The [compiler contract](docs/CONTRACT.md) documents supported inputs, assumptions, and interfaces.
+
+## Submission materials
+
+- [Slide deck (PDF)](submission/deck.pdf)
+- [Editable slide deck (PowerPoint)](submission/deck.pptx)
+- [Short abstract](submission/abstract.md)
+- [Demo recording script](submission/video-script.md)
+
+The demo video still needs to be recorded and published.
