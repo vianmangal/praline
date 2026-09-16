@@ -1,0 +1,374 @@
+{
+  "created_at": "2026-09-18T09:50:08.582479+00:00",
+  "files": {
+    "pyproject.toml": {
+      "owner": "experience",
+      "sha256": "3c53deca2a1fd6b08b100a9f16eb2dd030e79603974bfa4642df72f845fefdfa"
+    },
+    ".gitignore": {
+      "owner": "experience",
+      "sha256": "739a54f7f958992a5e455f95aa1786c3438fe99586d038f15e45b3c3597facd2"
+    },
+    "README.md": {
+      "owner": "experience",
+      "sha256": "4aa19b3fa329a69e47ee763127ec084283f302259d0263b3ae729e4d5ab41455"
+    },
+    "PRD.md": {
+      "owner": "experience",
+      "sha256": "b4553e01e297fd2e681f9a1321b49d862e2e041574f07d354438a96fd8a6d5a0"
+    },
+    "IMPLEMENTATION_PLAN.md": {
+      "owner": "experience",
+      "sha256": "dfc73295e8d6abc72531a9632fc159eb57866194070118d6c1c1cf8d1beb510a"
+    },
+    "SUBMISSION_PLAN.md": {
+      "owner": "experience",
+      "sha256": "8da620833a12250732eadca9ec1f43014d55d76d571282ec4d000104e012f7a3"
+    },
+    "praline/cli.py": {
+      "owner": "experience",
+      "sha256": "d2e6f70ed13d55a4e20176fa44b4c589e88cf7fd1a69ead0f85a5de21e65640c"
+    },
+    "praline/doctor.py": {
+      "owner": "experience",
+      "sha256": "8619dfe7ea96e7b192cbebc4abc9af575cd614775396df5455bd4dadbfcdc00d"
+    },
+    "praline/execution/__init__.py": {
+      "owner": "experience",
+      "sha256": "0816990173503d8d1c53bf3d434b5a092005b59112c7e508fed06db785d636b0"
+    },
+    "praline/execution/benchmark.py": {
+      "owner": "experience",
+      "sha256": "57817f957d358121c2d82b24ce487eba8951157e16e0ebab93364c74cfd4e929"
+    },
+    "praline/execution/compile.py": {
+      "owner": "experience",
+      "sha256": "d293e65205b595ca0e70fe6fa6c678cb0f6fd6d92b27afdddf4c81d42c4d73c8"
+    },
+    "praline/execution/core.py": {
+      "owner": "experience",
+      "sha256": "03446a2e05871a5994e9f708fcb0e4c44efbcd8719ad88b4a4ae64aa02c36fc8"
+    },
+    "praline/execution/process.py": {
+      "owner": "experience",
+      "sha256": "d4aeb0b233fe721d75b8961dc0b0051d48e78d3f46c40c9366a53d3e2cdede4f"
+    },
+    "praline/execution/validate.py": {
+      "owner": "experience",
+      "sha256": "1ca72f266c36a5244784c2ba72c18649a09f75abfa1c80725c0e7431789e8320"
+    },
+    "praline/report/__init__.py": {
+      "owner": "experience",
+      "sha256": "78ae6ff0ee0634d055e4bba086c0e07d2c9d6a0e5d0408342850035a2d31e47e"
+    },
+    "praline/report/html.py": {
+      "owner": "experience",
+      "sha256": "63399bf969ccea116cb27f66ea98a98cddc50269b271752770fbb998eae57025"
+    },
+    "examples/alias_unknown.c": {
+      "owner": "experience",
+      "sha256": "8c7e4e42a4ae8068e6f07579e90ebbdbe902ca428f99ede5239b642fa9ba3727"
+    },
+    "examples/global_write.c": {
+      "owner": "experience",
+      "sha256": "4e86e8e57aaf5fd6248638c8aeb56b9d009d5ab9e19737c801ffa719d0635c8f"
+    },
+    "examples/helper_map.c": {
+      "owner": "experience",
+      "sha256": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e"
+    },
+    "examples/prefix_dependency.c": {
+      "owner": "experience",
+      "sha256": "870f1c9789ee85c47e02708c8f9b3470a3e9df284911d075ffd2e61894c1a7e8"
+    },
+    "examples/runtime.h": {
+      "owner": "experience",
+      "sha256": "373c04441c1d87a81b9e571ff77ac4f011ba76ec13910c6dfe12f498244de219"
+    },
+    "examples/scatter_write.c": {
+      "owner": "experience",
+      "sha256": "ed3add4e3a97a14a19b9b5060f10021b434b8dc82ea12e7ab214c15d30be8a6e"
+    },
+    "examples/unknown_call.c": {
+      "owner": "experience",
+      "sha256": "4e101dc35e20dd38bdf62802ca8c40c14b183e0be83b5a974280793f0a754050"
+    },
+    "tests/integration/test_core_contract.py": {
+      "owner": "experience",
+      "sha256": "358074c9a90e87b25ccab674337b6dd90e02bee5f559961a45db50ed21ca777e"
+    },
+    "tests/integration/test_execution.py": {
+      "owner": "experience",
+      "sha256": "528784b948d0074e1ee8ceb3f7d41e8576cc53b9558fd05aaddf06ccf14cf7dd"
+    },
+    "scripts/assemble_checkout.py": {
+      "owner": "experience",
+      "sha256": "6c916182bc7fa56a38490c384fed67d2c1c9760be3f5c7c9f1f1e1d1cd6f8b5f"
+    },
+    "scripts/build_deck.mjs": {
+      "owner": "experience",
+      "sha256": "05eb60caf540ab818e04d63b9ed3562fd4181da58bc4f6ea6ac29dc5f2552a0c"
+    },
+    "scripts/check_submission.py": {
+      "owner": "experience",
+      "sha256": "74cafbe3ee9aeec4b0398860f5639497e07c9b89bb58a9f18ccb73a1601e067e"
+    },
+    "scripts/export_deck_pdf.py": {
+      "owner": "experience",
+      "sha256": "bcfffd3811f53dc0fe19553385ee511ebbba621c9e4504e4c81ed674465e8238"
+    },
+    "scripts/record_evidence.py": {
+      "owner": "experience",
+      "sha256": "8403edb4faf8aec209f158db1e4f7931a2eeaa0da0efc482f62e8a9d1d3bf83e"
+    },
+    "scripts/supplement_evidence.py": {
+      "owner": "experience",
+      "sha256": "067fe17cf1ed58e08c46baf7e0b06f31800cdeafe65f7243bd4d262c8d593119"
+    },
+    "submission/BUILD_LOG.md": {
+      "owner": "experience",
+      "sha256": "6dcf6f36768e74e68b03777a5c0115e30d04a60dc815d5e7304005f044ee5ae9"
+    },
+    "submission/INTEGRATION.md": {
+      "owner": "experience",
+      "sha256": "68cd3003257996b05dc13187408b7ae5d4ed4716c4a48507dde3f380864c1603"
+    },
+    "submission/MANIFEST.md": {
+      "owner": "experience",
+      "sha256": "fb51fad48d24e143f6c474380c96a29e43b5906433269b94f7a64bc7911c16bd"
+    },
+    "submission/abstract.md": {
+      "owner": "experience",
+      "sha256": "c72ac8f05e589548ccbcf425784753f14e93259a6eea747e7ba3a227ebdffae3"
+    },
+    "submission/deck.md": {
+      "owner": "experience",
+      "sha256": "dbe51b69bca18968ebb37733f71cfd42edaae6d12274e307f6c4676d9b3f1fc2"
+    },
+    "submission/deck.pdf": {
+      "owner": "experience",
+      "sha256": "bf0748400865d8674f82a020c3389b18c698fdd0f42efb510157a5f56b57eb4e"
+    },
+    "submission/deck.pptx": {
+      "owner": "experience",
+      "sha256": "dd7dcfd6a0f69e2af21f18e6bda01c974fb9b434ae108b6bd3a140930c405aea"
+    },
+    "submission/evidence/alias_unknown/analysis.json": {
+      "owner": "experience",
+      "sha256": "5c9847c1aaeca05f2b0c0d07a5b3e7602549bcabbc2322ba486fce1bda205b1a"
+    },
+    "submission/evidence/alias_unknown/report.html": {
+      "owner": "experience",
+      "sha256": "c9be79f2493203d04724591f1785d3f67f35f020148e41bba9dfe077e09bba89"
+    },
+    "submission/evidence/doctor.json": {
+      "owner": "experience",
+      "sha256": "72eef648984fee082a67066f3d9f8a093d24751276d7bb5b86a20081485df0e4"
+    },
+    "submission/evidence/global_write/analysis.json": {
+      "owner": "experience",
+      "sha256": "be3eeceae783113ff04bab3f3bd4cbe585307ab9827c9945ddf332be505c549a"
+    },
+    "submission/evidence/global_write/report.html": {
+      "owner": "experience",
+      "sha256": "85ddd452f138c9994147b7e858adf02b66e76f25b29bd5f8594eb9bfd0b3dd91"
+    },
+    "submission/evidence/map-cpu/analysis.json": {
+      "owner": "experience",
+      "sha256": "d7eb474b5e77cd2f8ec8ee965430c038cf084b686609ed6943e52ffe98f4b900"
+    },
+    "submission/evidence/map-cpu/benchmark.json": {
+      "owner": "experience",
+      "sha256": "b33ddb89a24222d6b877400fee415bb1fc00032a4ab46031b06430bed87d6def"
+    },
+    "submission/evidence/map-cpu/compilation.json": {
+      "owner": "experience",
+      "sha256": "d1bee12c9337ae74bd67f82f3870850644a960bb00b3e931f64df35951a01625"
+    },
+    "submission/evidence/map-cpu/doctor.json": {
+      "owner": "experience",
+      "sha256": "fcfc6bcd230148be97203e82bfc2295f535a24c26255ae38621ce60c4ee45474"
+    },
+    "submission/evidence/map-cpu/generated.c": {
+      "owner": "experience",
+      "sha256": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+    },
+    "submission/evidence/map-cpu/patch.diff": {
+      "owner": "experience",
+      "sha256": "66ebe80978241c55044ecc99d1038ff11b64c91b838b468baf5fc514017489e0"
+    },
+    "submission/evidence/map-cpu/report.html": {
+      "owner": "experience",
+      "sha256": "c14f026e06fc7e99a9493c34f1abba1e3f844534dce3d4cfa69b8e0b03712cb7"
+    },
+    "submission/evidence/map-cpu/runtime.h": {
+      "owner": "experience",
+      "sha256": "373c04441c1d87a81b9e571ff77ac4f011ba76ec13910c6dfe12f498244de219"
+    },
+    "submission/evidence/map-cpu/sanitizer.json": {
+      "owner": "experience",
+      "sha256": "a6035dafaac1e3f00b11ba2897f71de7d8c6b47cc64d2fcf3163d7cc27ee9f00"
+    },
+    "submission/evidence/map-cpu/validation.json": {
+      "owner": "experience",
+      "sha256": "0987e2d83d6c4d30524c742ebc427dbdb0507ca148f547c2682164d1db284cd5"
+    },
+    "submission/evidence/map-gpu/analysis.json": {
+      "owner": "experience",
+      "sha256": "989748768d256abd689efe52cb46aa2260265bf5e84177377f6a502941c361d0"
+    },
+    "submission/evidence/map-gpu/generated.c": {
+      "owner": "experience",
+      "sha256": "3043a64ec1e75a4e758c3d2a278d70fc8055abd1705039e6342cc70d93b987d1"
+    },
+    "submission/evidence/map-gpu/host-syntax-check.json": {
+      "owner": "experience",
+      "sha256": "8ff3d31888a612198f0e9b9a679e9ae4266aaa7d9b4843d5f6dc601c9d97ea5a"
+    },
+    "submission/evidence/map-gpu/patch.diff": {
+      "owner": "experience",
+      "sha256": "69db1cb4282a2d9d9298b9f8dc4a349fdfec891685bd23aa257a6db067927ee2"
+    },
+    "submission/evidence/map-gpu/report.html": {
+      "owner": "experience",
+      "sha256": "05bd9a18e5f06258b1b81603b98806c9d2c6a26bb58d9fe205fdb2417d2b4e95"
+    },
+    "submission/evidence/map-gpu/runtime.h": {
+      "owner": "experience",
+      "sha256": "373c04441c1d87a81b9e571ff77ac4f011ba76ec13910c6dfe12f498244de219"
+    },
+    "submission/evidence/prefix_dependency/analysis.json": {
+      "owner": "experience",
+      "sha256": "1346be5c89b48ebcc79d2a7bc932c79533655130bc5e009f026e2f23938a8917"
+    },
+    "submission/evidence/prefix_dependency/report.html": {
+      "owner": "experience",
+      "sha256": "7a4b1c1353959ba10bc24396fd5f3dbf353558a99eaed55f1b242e2dd779ac51"
+    },
+    "submission/evidence/recording-state.json": {
+      "owner": "experience",
+      "sha256": "60c165b9dfc61a561056f403860093d4527dfd4eac7b2c5d9c52a73e014a52cf"
+    },
+    "submission/evidence/scatter_write/analysis.json": {
+      "owner": "experience",
+      "sha256": "396263f614aa8ea14d9888b65dbdfcf5fb7352c83ff93d0c08ca7a195ee74fe3"
+    },
+    "submission/evidence/scatter_write/report.html": {
+      "owner": "experience",
+      "sha256": "60edb9f17c371aec93e0de8fb7198c77c86f3cc76fee14fc40b3a80e9aad5393"
+    },
+    "submission/evidence/unknown_call/analysis.json": {
+      "owner": "experience",
+      "sha256": "267ff716d46f1d3acad4ed1c6e8caa1d37590f87895974e4cf65fb746d8876ca"
+    },
+    "submission/evidence/unknown_call/report.html": {
+      "owner": "experience",
+      "sha256": "4e11297e447bd824b2171ca29b35216791d9102c9155f4e3a531f7c1d6617c91"
+    },
+    "submission/results.md": {
+      "owner": "experience",
+      "sha256": "b939040252fda1d420870c32b48752e6860ec5b2db6b1bdbc7555fa7ed04c61d"
+    },
+    "submission/video-script.md": {
+      "owner": "experience",
+      "sha256": "05b71dc68d4cb6958aa7f499b73fac6b76b954dd13f71e94bff9db7ec4f98495"
+    },
+    "praline/model.py": {
+      "owner": "compiler",
+      "sha256": "0811c22c9decc7f520284906404a817d88e32c3678713091d7cab537d6326d92"
+    },
+    "praline/frontend/__init__.py": {
+      "owner": "compiler",
+      "sha256": "eb2d577dcb7f1470b40e8226c9b1be3d99a541a014c910a7fde610158ae6f1a1"
+    },
+    "praline/frontend/clang_ast.py": {
+      "owner": "compiler",
+      "sha256": "eeaa2b547e69f3edc877aff722be5748faaaf95c874a93c3a2bddc1d647b45a1"
+    },
+    "praline/analysis/__init__.py": {
+      "owner": "compiler",
+      "sha256": "0fe385b90b3a04124bcd7cb90708823403ff55b500ebfa9f555b090e0a47348c"
+    },
+    "praline/analysis/dependencies.py": {
+      "owner": "compiler",
+      "sha256": "8fbd9dddbb3f28312b3cca08f465bcf1268dde12fd60d194ddad2feed9bcc4ee"
+    },
+    "praline/analysis/effects.py": {
+      "owner": "compiler",
+      "sha256": "834b4fd77f67fb02083236dc3b74cf30d95209cc39796b7e9ebb84fcc4f6db59"
+    },
+    "praline/analysis/loops.py": {
+      "owner": "compiler",
+      "sha256": "04143e49c6af557ee8d840595f6d27641d2c0e452be1e2d5cd42d8f45543608c"
+    },
+    "praline/transform/__init__.py": {
+      "owner": "compiler",
+      "sha256": "7e7c0c53e56bc037b435561cc83bc757356914c6c3b3a7f953b0727b47e89406"
+    },
+    "praline/transform/cpu.py": {
+      "owner": "compiler",
+      "sha256": "3e5effe0108f4f6ec93c391e354d4dd41a8d3f28ca544d53f7472b576722377e"
+    },
+    "praline/transform/edits.py": {
+      "owner": "compiler",
+      "sha256": "6ee5b5988f52508a13d9a259123823e8c633072e342a55024770e76e6914bbb1"
+    },
+    "praline/transform/gpu.py": {
+      "owner": "compiler",
+      "sha256": "3f361e4ef2588b774a71d99704095b831ad7e6cc240aac3a45f0bb574800d9dc"
+    },
+    "tests/unit/test_contract.py": {
+      "owner": "compiler",
+      "sha256": "028296102d9423ec104f3f2065356cb7bb10af7ac06c4a2b32a983fb689e1a5c"
+    },
+    "tests/unit/test_core.py": {
+      "owner": "compiler",
+      "sha256": "037fe9801a14eb506e88b1b1b2e2eb1ce02a6e03aa7c842d964e3e76adc63fe1"
+    },
+    "tests/unit/test_generated_execution.py": {
+      "owner": "compiler",
+      "sha256": "ad68731cbb9db7d418208a3fdaf5d86bef53dbf3d1026b65c264cb166debb376"
+    },
+    "tests/fixtures/alias_unknown.c": {
+      "owner": "compiler",
+      "sha256": "7ee1bba09fb64ae53f31988417b4158ceaa16ed90435848deb077d9ec53c7651"
+    },
+    "tests/fixtures/evidence/core-verification.json": {
+      "owner": "compiler",
+      "sha256": "56ca319eb465ef8e8bed0a2ac2635c596dc4bad4e927d70ce3e5775facc85f30"
+    },
+    "tests/fixtures/global_write.c": {
+      "owner": "compiler",
+      "sha256": "144e97dc115ca3c14f1437ce26348798646a6f90d90dfc4ac1098d9bf78186ef"
+    },
+    "tests/fixtures/helper_map.c": {
+      "owner": "compiler",
+      "sha256": "2d073ce063676f71e15abda07bb6b0351bf19143d8b718e8899b37d98da29c1f"
+    },
+    "tests/fixtures/map_driver.c": {
+      "owner": "compiler",
+      "sha256": "cea7af24bb5f909229f9ec5e8ca2e7683046c5d3ede6ed476c924f271db1f249"
+    },
+    "tests/fixtures/pointer_helper.c": {
+      "owner": "compiler",
+      "sha256": "fb75c903b861da450d1ab3ef21a80bdd3f949a16517465742d423ba47efaac8e"
+    },
+    "tests/fixtures/prefix_dependency.c": {
+      "owner": "compiler",
+      "sha256": "ef5220adc6ae8a266bf2de33c05c1ca02305ec0afa1d6a02049d7fd48d1167c8"
+    },
+    "tests/fixtures/scatter_write.c": {
+      "owner": "compiler",
+      "sha256": "e87e22609b06c84483be60894917eeac0572463a002c950cb36ceec3e6e4ca1f"
+    },
+    "tests/fixtures/unknown_call.c": {
+      "owner": "compiler",
+      "sha256": "edffd721a03a5f796fc8947773aa3920e22134b11abfa34944c872b59e4f7a78"
+    },
+    "docs/CONTRACT.md": {
+      "owner": "compiler",
+      "sha256": "27ed49804f6fed4050373ac8bc3ab9e3cd1d06723a834a64d31602dde934934f"
+    }
+  },
+  "note": "Core files are copied byte-for-byte. No safety or transformation implementation is changed."
+}

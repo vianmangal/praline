@@ -1,0 +1,1102 @@
+{
+  "timestamp": "2026-09-18T09:34:56.379632+00:00",
+  "status": "passed",
+  "cases": [
+    {
+      "size": 0,
+      "seed": 1,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "0",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.2807754579989705,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+              "0",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.17495337498257868,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "0",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0471466250019148,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "0",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+          "0",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "0",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 0,
+      "seed": 7,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "0",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.04605695800273679,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+              "0",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.051226917013991624,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "0",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.046796999988146126,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "0",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+          "0",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "0",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1,
+      "seed": 1,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "1",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.04871466601616703,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+              "1",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0493697079946287,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "1",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.04920404200674966,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "1",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+          "1",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "1",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1,
+      "seed": 7,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "1",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.04785583302145824,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+              "1",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.04967258399119601,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "1",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.04775137500837445,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "1",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+          "1",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "1",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1024,
+      "seed": 1,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "1024",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.05046137500903569,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+              "1024",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.05083916601142846,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "1024",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.04912308300845325,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "1024",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+          "1024",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "1024",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1024,
+      "seed": 7,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "1024",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.04724591699778102,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+              "1024",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.051117458002408966,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "1024",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0487503329932224,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "1024",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+          "1024",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "1024",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 65536,
+      "seed": 1,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "65536",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.05890191698563285,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+              "65536",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.062323000020114705,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "65536",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.057309208990773186,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "65536",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+          "65536",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "65536",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 65536,
+      "seed": 7,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "65536",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.06505924998782575,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+              "65536",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.05924199998844415,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+              "65536",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.05741029098862782,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "65536",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+          "65536",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+          "65536",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    }
+  ],
+  "sizes": [
+    0,
+    1,
+    1024,
+    65536
+  ],
+  "seeds": [
+    1,
+    7
+  ],
+  "threads": 2,
+  "numeric": "integer",
+  "atol": 0,
+  "rtol": 0,
+  "compilation": {
+    "sequential": {
+      "source": "/Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c",
+      "source_hash": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+      "output": "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential",
+      "target": "sequential",
+      "dependencies": {
+        "/Users/vian/.codex/worktrees/b5f9/segfault/examples/runtime.h": "373c04441c1d87a81b9e571ff77ac4f011ba76ec13910c6dfe12f498244de219"
+      },
+      "status": "ok",
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-O2",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/examples",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c",
+        "-o",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/sequential"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.17154970800038427,
+      "environment": {},
+      "compiler": {
+        "path": "/usr/bin/clang",
+        "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+        "openmp_flags": [
+          "-Xpreprocessor",
+          "-fopenmp",
+          "-I/opt/homebrew/opt/libomp/include",
+          "-L/opt/homebrew/opt/libomp/lib",
+          "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+          "-lomp"
+        ]
+      },
+      "optimization": "-O2"
+    },
+    "generated": {
+      "source": "/Users/vian/.codex/worktrees/b5f9/segfault/submission/evidence/map-cpu/generated.c",
+      "source_hash": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6",
+      "output": "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated",
+      "target": "cpu",
+      "dependencies": {
+        "/Users/vian/.codex/worktrees/b5f9/segfault/examples/runtime.h": "373c04441c1d87a81b9e571ff77ac4f011ba76ec13910c6dfe12f498244de219"
+      },
+      "status": "ok",
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-O2",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/examples",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/submission/evidence/map-cpu/generated.c",
+        "-o",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/runs/sanitizer/generated/generated"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.08448166598100215,
+      "environment": {},
+      "compiler": {
+        "path": "/usr/bin/clang",
+        "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+        "openmp_flags": [
+          "-Xpreprocessor",
+          "-fopenmp",
+          "-I/opt/homebrew/opt/libomp/include",
+          "-L/opt/homebrew/opt/libomp/lib",
+          "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+          "-lomp"
+        ]
+      },
+      "optimization": "-O2"
+    }
+  },
+  "independent_reference": true,
+  "limitation": "Tested inputs establish observed equivalence, not a proof for arbitrary inputs"
+}

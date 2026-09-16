@@ -1,0 +1,19 @@
+{
+  "git_commit": "8317b178b2259fed244d2f96f5f2c7e29a325dee",
+  "git_status": "?? .gitignore\n?? README.md\n?? examples/\n?? praline/\n?? pyproject.toml\n?? scripts/\n?? submission/\n?? tests/\n",
+  "note": "Working tree evidence. Uncommitted changes are not represented by the base commit alone.",
+  "core_snapshot": {
+    "praline/analysis/__init__.py": "0fe385b90b3a04124bcd7cb90708823403ff55b500ebfa9f555b090e0a47348c",
+    "praline/analysis/dependencies.py": "e94d265c7abec5428e147bc5c02589f4f8c9532e8b42c5c5caffedf6979118d5",
+    "praline/analysis/effects.py": "ddb11c8e7c53ecd9d0d82f43cb832f0ef68d3523831fa106343f2cbc1669b05a",
+    "praline/analysis/loops.py": "84a34f036df9dffcac0560b0f3db1c3681611106264fd19dc7c3c7036ab3772b",
+    "praline/frontend/__init__.py": "eb2d577dcb7f1470b40e8226c9b1be3d99a541a014c910a7fde610158ae6f1a1",
+    "praline/frontend/clang_ast.py": "eeaa2b547e69f3edc877aff722be5748faaaf95c874a93c3a2bddc1d647b45a1",
+    "praline/model.py": "0811c22c9decc7f520284906404a817d88e32c3678713091d7cab537d6326d92",
+    "praline/transform/__init__.py": "5cc4768fb142f721755291a4d69b1e0b527596d97db30acd3cd17d2ba57b903c",
+    "praline/transform/cpu.py": "3e5effe0108f4f6ec93c391e354d4dd41a8d3f28ca544d53f7472b576722377e",
+    "praline/transform/edits.py": "6ee5b5988f52508a13d9a259123823e8c633072e342a55024770e76e6914bbb1",
+    "praline/transform/gpu.py": "3f361e4ef2588b774a71d99704095b831ad7e6cc240aac3a45f0bb574800d9dc"
+  },
+  "contract_sha256": "55fb4056250c7786cc1b5dd1e5d00e918a2f972e356ef12d835efa663b67bfc3"
+}

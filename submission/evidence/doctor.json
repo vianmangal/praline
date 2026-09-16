@@ -1,0 +1,200 @@
+{
+  "status": "ok",
+  "environment": {
+    "system": "Darwin",
+    "release": "25.6.0",
+    "machine": "arm64",
+    "processor": "arm",
+    "cpu_count": 10,
+    "python": "3.14.5"
+  },
+  "compilers": [
+    {
+      "path": "/usr/bin/clang",
+      "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+      "serial": {
+        "status": "ok",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-O2",
+          "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe.c",
+          "-o",
+          "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "elapsed_seconds": 0.1858524999988731,
+        "environment": {}
+      },
+      "clang_ast_status": "ok",
+      "openmp_attempts": [
+        {
+          "flags": [
+            "-fopenmp"
+          ],
+          "compile": {
+            "status": "failed",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-O2",
+              "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe.c",
+              "-o",
+              "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe",
+              "-fopenmp"
+            ],
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "clang: error: unsupported option '-fopenmp'\nclang: error: unsupported option '-fopenmp'\n",
+            "elapsed_seconds": 0.019296999991638586,
+            "environment": {}
+          },
+          "execution": null
+        },
+        {
+          "flags": [
+            "-Xpreprocessor",
+            "-fopenmp",
+            "-I/opt/homebrew/opt/libomp/include",
+            "-L/opt/homebrew/opt/libomp/lib",
+            "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+            "-lomp"
+          ],
+          "compile": {
+            "status": "ok",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-O2",
+              "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe.c",
+              "-o",
+              "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe",
+              "-Xpreprocessor",
+              "-fopenmp",
+              "-I/opt/homebrew/opt/libomp/include",
+              "-L/opt/homebrew/opt/libomp/lib",
+              "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+              "-lomp"
+            ],
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "elapsed_seconds": 0.13181270801578648,
+            "environment": {}
+          },
+          "execution": {
+            "status": "ok",
+            "command": [
+              "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe"
+            ],
+            "returncode": 0,
+            "stdout": "2\n",
+            "stderr": "",
+            "elapsed_seconds": 0.5539284579863306,
+            "environment": {
+              "OMP_NUM_THREADS": "2"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "selected": {
+    "path": "/usr/bin/clang",
+    "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+    "openmp_flags": [
+      "-Xpreprocessor",
+      "-fopenmp",
+      "-I/opt/homebrew/opt/libomp/include",
+      "-L/opt/homebrew/opt/libomp/lib",
+      "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+      "-lomp"
+    ]
+  },
+  "cpu_openmp": {
+    "status": "verified",
+    "threads": 2,
+    "compile": {
+      "status": "ok",
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-O2",
+        "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe.c",
+        "-o",
+        "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.13181270801578648,
+      "environment": {}
+    },
+    "execution": {
+      "status": "ok",
+      "command": [
+        "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe"
+      ],
+      "returncode": 0,
+      "stdout": "2\n",
+      "stderr": "",
+      "elapsed_seconds": 0.5539284579863306,
+      "environment": {
+        "OMP_NUM_THREADS": "2"
+      }
+    }
+  },
+  "gpu": {
+    "status": "unavailable",
+    "reason": "Mandatory target execution did not establish a non-host device",
+    "offload_flags": [],
+    "compile": {
+      "status": "ok",
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-O2",
+        "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe.c",
+        "-o",
+        "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.07670666597550735,
+      "environment": {}
+    },
+    "execution": {
+      "status": "failed",
+      "command": [
+        "/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-bwdqx3d9/probe"
+      ],
+      "returncode": 1,
+      "stdout": "0 1\n",
+      "stderr": "",
+      "elapsed_seconds": 0.4535469170077704,
+      "environment": {
+        "OMP_TARGET_OFFLOAD": "MANDATORY"
+      }
+    },
+    "device_metadata": {
+      "model": null,
+      "driver": null,
+      "backend": null
+    }
+  }
+}

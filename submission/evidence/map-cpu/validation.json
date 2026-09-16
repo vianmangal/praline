@@ -1,0 +1,3832 @@
+{
+  "timestamp": "2026-09-18T09:33:55.996726+00:00",
+  "status": "passed",
+  "cases": [
+    {
+      "size": 0,
+      "seed": 1,
+      "threads": 1,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.11158566700760275,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "0",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.100239125022199,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.005661499977577478,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "0",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 0,
+      "seed": 7,
+      "threads": 1,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.004230499995173886,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "0",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.004983207996701822,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0027704999956768006,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "0",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1,
+      "seed": 1,
+      "threads": 1,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002936625009169802,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.003834792005363852,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0025570830039214343,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1,
+      "seed": 7,
+      "threads": 1,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0025866659998428077,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0038176669913809747,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0025843750045169145,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1024,
+      "seed": 1,
+      "threads": 1,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0026721670001279563,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1024",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0035037090128753334,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002523000002838671,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1024",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1024,
+      "seed": 7,
+      "threads": 1,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0023576249950565398,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1024",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0032105420250445604,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002645290980581194,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1024",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 65536,
+      "seed": 1,
+      "threads": 1,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006034707999788225,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "65536",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006989832996623591,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.00637958399602212,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "65536",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 65536,
+      "seed": 7,
+      "threads": 1,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006419249984901398,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "65536",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006725292012561113,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.005883125006221235,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "65536",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1048576,
+      "seed": 1,
+      "threads": 1,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.05931370801408775,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "729c82baa3cdc46afc008cc3b96524adf476d3380bda0dbccc6c9ee76d47f875",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1048576",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0610662079998292,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "729c82baa3cdc46afc008cc3b96524adf476d3380bda0dbccc6c9ee76d47f875",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.05986687500262633,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "729c82baa3cdc46afc008cc3b96524adf476d3380bda0dbccc6c9ee76d47f875",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1048576",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1048576,
+      "seed": 7,
+      "threads": 1,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.061741082987282425,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "d5a2a499c0be0ca6dc992411f5e253a26d7ea6569be64aa04a674b152e39742d",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1048576",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.06086195801617578,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "d5a2a499c0be0ca6dc992411f5e253a26d7ea6569be64aa04a674b152e39742d",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.05973100001574494,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "d5a2a499c0be0ca6dc992411f5e253a26d7ea6569be64aa04a674b152e39742d",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1048576",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 0,
+      "seed": 1,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.003637791989604011,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "0",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.003414707985939458,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002636791003169492,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "0",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 0,
+      "seed": 7,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0022030840045772493,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "0",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0029398329788818955,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002070166985504329,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "0",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1,
+      "seed": 1,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0021637910103891045,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002872625016607344,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002315458987141028,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1,
+      "seed": 7,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.00243066597613506,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0030035420204512775,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002142834011465311,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1024,
+      "seed": 1,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0022671250044368207,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1024",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0033554169931448996,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0024142909969668835,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1024",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1024,
+      "seed": 7,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002334207994863391,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1024",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0030456660024356097,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0023231249942909926,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1024",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 65536,
+      "seed": 1,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0057888329902198166,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "65536",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.007009541994193569,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.00619283301057294,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "65536",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 65536,
+      "seed": 7,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006332791002932936,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "65536",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006854250008473173,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006423583021387458,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "65536",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1048576,
+      "seed": 1,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.06036433400004171,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "729c82baa3cdc46afc008cc3b96524adf476d3380bda0dbccc6c9ee76d47f875",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1048576",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.06106608299887739,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "729c82baa3cdc46afc008cc3b96524adf476d3380bda0dbccc6c9ee76d47f875",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.060395791981136426,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "729c82baa3cdc46afc008cc3b96524adf476d3380bda0dbccc6c9ee76d47f875",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1048576",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1048576,
+      "seed": 7,
+      "threads": 2,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.059588000003714114,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "d5a2a499c0be0ca6dc992411f5e253a26d7ea6569be64aa04a674b152e39742d",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1048576",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.06364224999560975,
+            "environment": {
+              "OMP_NUM_THREADS": "2",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "d5a2a499c0be0ca6dc992411f5e253a26d7ea6569be64aa04a674b152e39742d",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.06314912499510683,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "d5a2a499c0be0ca6dc992411f5e253a26d7ea6569be64aa04a674b152e39742d",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1048576",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 0,
+      "seed": 1,
+      "threads": 4,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.003530874993884936,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "0",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.003999000007752329,
+            "environment": {
+              "OMP_NUM_THREADS": "4",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0024015000090003014,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "0",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 0,
+      "seed": 7,
+      "threads": 4,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0028187920106574893,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "0",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.003595832997234538,
+            "environment": {
+              "OMP_NUM_THREADS": "4",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "0",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0023295000137295574,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "23f91a995a5eb8792586148f5f1d00a2339445007616a21a0d0a45ab56dacad9",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 0,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "0",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "0",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1,
+      "seed": 1,
+      "threads": 4,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0023107499873731285,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0036238750035408884,
+            "environment": {
+              "OMP_NUM_THREADS": "4",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0024555839772801846,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "c8eebf48447166463f6396895ad6f9858e601768a7f931cb40189b84d71cd2b1",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1,
+      "seed": 7,
+      "threads": 4,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002352125011384487,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.003495874989312142,
+            "environment": {
+              "OMP_NUM_THREADS": "4",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.00259858401841484,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "2321a5f9ac58fc741e0a755718aa1a75ce63e916a03e4078019e7fe5326b7369",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1024,
+      "seed": 1,
+      "threads": 4,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002386082982411608,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1024",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.003495583019685,
+            "environment": {
+              "OMP_NUM_THREADS": "4",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.002816624997649342,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "407dea75cb4fb282205c1c97521664a930491d9619848a9a82145cc3c3ddd472",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1024",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1024,
+      "seed": 7,
+      "threads": 4,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0022007910010870546,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1024",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0037071249971631914,
+            "environment": {
+              "OMP_NUM_THREADS": "4",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1024",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0024558749864809215,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "4ebf4660e7b1528a70a7526bdda8a06d931d78869ab20ebabf8252f85fff6a95",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1024,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1024",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1024",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 65536,
+      "seed": 1,
+      "threads": 4,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006204832985531539,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "65536",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.007829583977581933,
+            "environment": {
+              "OMP_NUM_THREADS": "4",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006932000018423423,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "1c756724ea3e1641cb2412fc0867fe67d0a9f2abccba481f55332a2af191fa20",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "65536",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 65536,
+      "seed": 7,
+      "threads": 4,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006712625006912276,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "65536",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.00764779097517021,
+            "environment": {
+              "OMP_NUM_THREADS": "4",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "65536",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.006908042007125914,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "9ab387f7e3e31c3c990bfcb71b0533b08a86da3e9d9e45c3b3db02357b56fc06",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 65536,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "65536",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "65536",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1048576,
+      "seed": 1,
+      "threads": 4,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.0605498329969123,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "729c82baa3cdc46afc008cc3b96524adf476d3380bda0dbccc6c9ee76d47f875",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1048576",
+              "1",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.061681708990363404,
+            "environment": {
+              "OMP_NUM_THREADS": "4",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "729c82baa3cdc46afc008cc3b96524adf476d3380bda0dbccc6c9ee76d47f875",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "1",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.06008374999510124,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "729c82baa3cdc46afc008cc3b96524adf476d3380bda0dbccc6c9ee76d47f875",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "1",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1048576",
+          "1",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "1",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    },
+    {
+      "size": 1048576,
+      "seed": 7,
+      "threads": 4,
+      "status": "passed",
+      "executions": {
+        "sequential": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.06018208299065009,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "d5a2a499c0be0ca6dc992411f5e253a26d7ea6569be64aa04a674b152e39742d",
+          "reason": null
+        },
+        "generated": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+              "1048576",
+              "7",
+              "validate"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.060875625000335276,
+            "environment": {
+              "OMP_NUM_THREADS": "4",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "d5a2a499c0be0ca6dc992411f5e253a26d7ea6569be64aa04a674b152e39742d",
+          "reason": null
+        },
+        "reference": {
+          "status": "ok",
+          "process": {
+            "status": "ok",
+            "command": [
+              "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+              "1048576",
+              "7",
+              "reference"
+            ],
+            "returncode": 0,
+            "stderr": "",
+            "elapsed_seconds": 0.07150350001757033,
+            "environment": {
+              "OMP_NUM_THREADS": "1",
+              "OMP_DYNAMIC": "FALSE"
+            }
+          },
+          "output_hash": "d5a2a499c0be0ca6dc992411f5e253a26d7ea6569be64aa04a674b152e39742d",
+          "reason": null
+        }
+      },
+      "comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "reference_comparison": {
+        "status": "passed",
+        "elements": 1048576,
+        "mismatches": 0,
+        "samples": [],
+        "max_absolute_error": 0.0,
+        "numeric": "integer",
+        "atol": 0,
+        "rtol": 0
+      },
+      "observables_equal": true,
+      "device_verified": null,
+      "passed": true,
+      "commands": {
+        "sequential": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "7",
+          "validate"
+        ],
+        "generated": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+          "1048576",
+          "7",
+          "validate"
+        ],
+        "reference": [
+          "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+          "1048576",
+          "7",
+          "reference"
+        ]
+      },
+      "returncodes": {
+        "sequential": 0,
+        "generated": 0,
+        "reference": 0
+      },
+      "source_hashes": {
+        "sequential": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+        "generated": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6"
+      },
+      "stdout_omitted_reason": "Full arrays compared in memory. Content hashes retained rather than repeating large vectors. Stderr retained in executions."
+    }
+  ],
+  "sizes": [
+    0,
+    1,
+    1024,
+    65536,
+    1048576
+  ],
+  "seeds": [
+    1,
+    7
+  ],
+  "threads": 1,
+  "numeric": "integer",
+  "atol": 0,
+  "rtol": 0,
+  "compilation": {
+    "sequential": {
+      "source": "/Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c",
+      "source_hash": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+      "output": "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+      "target": "sequential",
+      "dependencies": {
+        "/Users/vian/.codex/worktrees/b5f9/segfault/examples/runtime.h": "373c04441c1d87a81b9e571ff77ac4f011ba76ec13910c6dfe12f498244de219"
+      },
+      "status": "ok",
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-O2",
+        "-I",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/examples",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c",
+        "-o",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.06992999999783933,
+      "environment": {},
+      "compiler": {
+        "path": "/usr/bin/clang",
+        "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+        "openmp_flags": [
+          "-Xpreprocessor",
+          "-fopenmp",
+          "-I/opt/homebrew/opt/libomp/include",
+          "-L/opt/homebrew/opt/libomp/lib",
+          "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+          "-lomp"
+        ]
+      },
+      "optimization": "-O2"
+    },
+    "generated": {
+      "source": "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/generated.c",
+      "source_hash": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6",
+      "output": "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+      "target": "cpu",
+      "dependencies": {
+        "/Users/vian/.codex/worktrees/b5f9/segfault/examples/runtime.h": "373c04441c1d87a81b9e571ff77ac4f011ba76ec13910c6dfe12f498244de219"
+      },
+      "status": "ok",
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-O2",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp",
+        "-I",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/examples",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/generated.c",
+        "-o",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 0.061645957990549505,
+      "environment": {},
+      "compiler": {
+        "path": "/usr/bin/clang",
+        "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+        "openmp_flags": [
+          "-Xpreprocessor",
+          "-fopenmp",
+          "-I/opt/homebrew/opt/libomp/include",
+          "-L/opt/homebrew/opt/libomp/lib",
+          "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+          "-lomp"
+        ]
+      },
+      "optimization": "-O2"
+    }
+  },
+  "independent_reference": true,
+  "limitation": "Tested inputs establish observed equivalence, not a proof for arbitrary inputs",
+  "thread_counts": [
+    1,
+    2,
+    4
+  ]
+}

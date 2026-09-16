@@ -1,0 +1,632 @@
+{
+  "schema_version": 1,
+  "run_id": "bb9d782c-ae4f-47fe-bb78-436f7fff67a4",
+  "created_at": "2026-09-18T09:34:01.907342+00:00",
+  "status": "generated",
+  "source": {
+    "path": "/Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c",
+    "sha256": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+    "text": "#include \"runtime.h\"\nstatic int apply(int value) { return value * 3 + 1; }\nstatic void kernel(const int * restrict input, int * restrict output, int n) {\n    for (int i = 0; i < n; ++i) {\n        output[i] = apply(input[i]);\n    }\n}\nint main(int argc, char **argv) { return harness(argc, argv, kernel, 0, NULL); }\n"
+  },
+  "compiler": {
+    "executable": "clang",
+    "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+    "command": [
+      "clang",
+      "-std=c11",
+      "-Xclang",
+      "-fopenmp",
+      "-Xclang",
+      "-ast-dump=json",
+      "-fsyntax-only",
+      "/Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c"
+    ],
+    "diagnostics": ""
+  },
+  "loops": [
+    {
+      "id": "loop-158",
+      "function": "kernel",
+      "span": {
+        "start": 158,
+        "end": 230,
+        "line": 4,
+        "column": 5,
+        "end_line": 6
+      },
+      "source": "for (int i = 0; i < n; ++i) {\n        output[i] = apply(input[i]);\n    }",
+      "decision": "safe",
+      "reasons": [
+        {
+          "code": "INDEPENDENT_MAP",
+          "message": "Every output index is injective; accesses to each written buffer use the same per-iteration index; other buffers are disjoint under the recorded contracts",
+          "span": {
+            "start": 158,
+            "end": 230,
+            "line": 4,
+            "column": 5,
+            "end_line": 6
+          },
+          "helper_chain": [
+            "loop-158"
+          ]
+        }
+      ],
+      "assumptions": [
+        "The C restrict contract for output/input is respected by callers",
+        "The original serial program has defined behavior and every executed access is within a valid live object",
+        "User extent: input[0:n] is a valid contiguous buffer covering all loop accesses",
+        "User extent: output[0:n] is a valid contiguous buffer covering all loop accesses"
+      ],
+      "iterator": "i",
+      "lower_bound": "0",
+      "upper_bound": "n",
+      "trip_count": "max(0, n - 0)",
+      "effects": [
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13faf88",
+          "name": "output",
+          "storage": "parameter",
+          "index": null,
+          "span": {
+            "start": 196,
+            "end": 202,
+            "line": 5,
+            "column": 9,
+            "end_line": 5
+          },
+          "helper_chain": [
+            "loop-158"
+          ]
+        },
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13fb1d8",
+          "name": "i",
+          "storage": "local",
+          "index": null,
+          "span": {
+            "start": 203,
+            "end": 204,
+            "line": 5,
+            "column": 16,
+            "end_line": 5
+          },
+          "helper_chain": [
+            "loop-158"
+          ]
+        },
+        {
+          "kind": "write",
+          "declaration_id": "0xaa13faf88",
+          "name": "output",
+          "storage": "parameter",
+          "index": "i",
+          "span": {
+            "start": 196,
+            "end": 205,
+            "line": 5,
+            "column": 9,
+            "end_line": 5
+          },
+          "helper_chain": [
+            "loop-158"
+          ]
+        },
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13faf08",
+          "name": "input",
+          "storage": "parameter",
+          "index": null,
+          "span": {
+            "start": 214,
+            "end": 219,
+            "line": 5,
+            "column": 27,
+            "end_line": 5
+          },
+          "helper_chain": [
+            "loop-158"
+          ]
+        },
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13fb1d8",
+          "name": "i",
+          "storage": "local",
+          "index": null,
+          "span": {
+            "start": 220,
+            "end": 221,
+            "line": 5,
+            "column": 33,
+            "end_line": 5
+          },
+          "helper_chain": [
+            "loop-158"
+          ]
+        },
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13faf08",
+          "name": "input",
+          "storage": "parameter",
+          "index": "i",
+          "span": {
+            "start": 214,
+            "end": 222,
+            "line": 5,
+            "column": 27,
+            "end_line": 5
+          },
+          "helper_chain": [
+            "loop-158"
+          ]
+        },
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13fb1d8",
+          "name": "i",
+          "storage": "local",
+          "index": null,
+          "span": {
+            "start": 174,
+            "end": 175,
+            "line": 4,
+            "column": 21,
+            "end_line": 4
+          },
+          "helper_chain": [
+            "loop-158"
+          ]
+        },
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13fb018",
+          "name": "n",
+          "storage": "parameter",
+          "index": null,
+          "span": {
+            "start": 178,
+            "end": 179,
+            "line": 4,
+            "column": 25,
+            "end_line": 4
+          },
+          "helper_chain": [
+            "loop-158"
+          ]
+        }
+      ],
+      "calls": [
+        "apply"
+      ],
+      "mappings": [
+        {
+          "name": "input",
+          "declaration_id": "0xaa13faf08",
+          "direction": "to",
+          "extent": "n",
+          "extent_source": "explicit user configuration"
+        },
+        {
+          "name": "output",
+          "declaration_id": "0xaa13faf88",
+          "direction": "tofrom",
+          "extent": "n",
+          "extent_source": "explicit user configuration"
+        }
+      ],
+      "eligible_targets": [
+        "cpu",
+        "gpu"
+      ],
+      "recommendation": {
+        "target": "insufficient_evidence",
+        "confidence": "low",
+        "reason": "Safety is separate from profitability; no calibration or measured timings"
+      },
+      "helper_ids": [
+        "0xaa13fad60"
+      ],
+      "shared_variables": [
+        "input",
+        "n",
+        "output"
+      ],
+      "firstprivate_variables": [
+        "n"
+      ],
+      "generation_reasons": []
+    }
+  ],
+  "functions": [
+    {
+      "id": "0xaa13fad60",
+      "name": "apply",
+      "span": {
+        "start": 21,
+        "end": 74,
+        "line": 2,
+        "column": 1,
+        "end_line": 2
+      },
+      "parameters": [
+        {
+          "id": "0xaa13facc8",
+          "name": "value",
+          "type": "int"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13facc8",
+          "name": "value",
+          "storage": "parameter",
+          "index": null,
+          "span": {
+            "start": 58,
+            "end": 63,
+            "line": 2,
+            "column": 38,
+            "end_line": 2
+          },
+          "helper_chain": [
+            "apply"
+          ]
+        }
+      ],
+      "calls": [],
+      "unknown_reasons": [],
+      "pure": true,
+      "return_expression": "((value * 3) + 1)"
+    },
+    {
+      "id": "0xaa13fb100",
+      "name": "kernel",
+      "span": {
+        "start": 75,
+        "end": 232,
+        "line": 3,
+        "column": 1,
+        "end_line": 7
+      },
+      "parameters": [
+        {
+          "id": "0xaa13faf08",
+          "name": "input",
+          "type": "const int *restrict"
+        },
+        {
+          "id": "0xaa13faf88",
+          "name": "output",
+          "type": "int *restrict"
+        },
+        {
+          "id": "0xaa13fb018",
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13fb018",
+          "name": "n",
+          "storage": "parameter",
+          "index": null,
+          "span": {
+            "start": 178,
+            "end": 179,
+            "line": 4,
+            "column": 25,
+            "end_line": 4
+          },
+          "helper_chain": [
+            "kernel"
+          ]
+        },
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13faf88",
+          "name": "output",
+          "storage": "parameter",
+          "index": null,
+          "span": {
+            "start": 196,
+            "end": 202,
+            "line": 5,
+            "column": 9,
+            "end_line": 5
+          },
+          "helper_chain": [
+            "kernel"
+          ]
+        },
+        {
+          "kind": "write",
+          "declaration_id": "0xaa13faf88",
+          "name": "output",
+          "storage": "parameter",
+          "index": "i",
+          "span": {
+            "start": 196,
+            "end": 205,
+            "line": 5,
+            "column": 9,
+            "end_line": 5
+          },
+          "helper_chain": [
+            "kernel"
+          ]
+        },
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13faf08",
+          "name": "input",
+          "storage": "parameter",
+          "index": null,
+          "span": {
+            "start": 214,
+            "end": 219,
+            "line": 5,
+            "column": 27,
+            "end_line": 5
+          },
+          "helper_chain": [
+            "kernel"
+          ]
+        },
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13faf08",
+          "name": "input",
+          "storage": "parameter",
+          "index": "i",
+          "span": {
+            "start": 214,
+            "end": 222,
+            "line": 5,
+            "column": 27,
+            "end_line": 5
+          },
+          "helper_chain": [
+            "kernel"
+          ]
+        }
+      ],
+      "calls": [
+        "apply"
+      ],
+      "unknown_reasons": [
+        {
+          "code": "UNSUPPORTED_SYNTAX",
+          "message": "Unsupported AST node: ForStmt",
+          "span": {
+            "start": 158,
+            "end": 230,
+            "line": 4,
+            "column": 5,
+            "end_line": 6
+          },
+          "helper_chain": [
+            "kernel"
+          ]
+        }
+      ],
+      "pure": false,
+      "return_expression": null
+    },
+    {
+      "id": "0xaa13fb718",
+      "name": "main",
+      "span": {
+        "start": 233,
+        "end": 313,
+        "line": 8,
+        "column": 1,
+        "end_line": 8
+      },
+      "parameters": [
+        {
+          "id": "0xaa13fb5b0",
+          "name": "argc",
+          "type": "int"
+        },
+        {
+          "id": "0xaa13fb630",
+          "name": "argv",
+          "type": "char **"
+        }
+      ],
+      "effects": [
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13fb5b0",
+          "name": "argc",
+          "storage": "parameter",
+          "index": null,
+          "span": {
+            "start": 282,
+            "end": 286,
+            "line": 8,
+            "column": 50,
+            "end_line": 8
+          },
+          "helper_chain": [
+            "main"
+          ]
+        },
+        {
+          "kind": "read",
+          "declaration_id": "0xaa13fb630",
+          "name": "argv",
+          "storage": "parameter",
+          "index": null,
+          "span": {
+            "start": 288,
+            "end": 292,
+            "line": 8,
+            "column": 56,
+            "end_line": 8
+          },
+          "helper_chain": [
+            "main"
+          ]
+        }
+      ],
+      "calls": [
+        "harness"
+      ],
+      "unknown_reasons": [
+        {
+          "code": "MACRO_EXPANSION",
+          "message": "Macro-expanded semantics/ranges are not supported",
+          "span": null,
+          "helper_chain": [
+            "main"
+          ]
+        },
+        {
+          "code": "MACRO_EXPANSION",
+          "message": "Macro-expanded semantics/ranges are not supported",
+          "span": null,
+          "helper_chain": [
+            "main"
+          ]
+        },
+        {
+          "code": "MACRO_EXPANSION",
+          "message": "Macro-expanded semantics/ranges are not supported",
+          "span": null,
+          "helper_chain": [
+            "main"
+          ]
+        },
+        {
+          "code": "UNSUPPORTED_ACCESS",
+          "message": "Pointer casts are not analyzed",
+          "span": null,
+          "helper_chain": [
+            "main"
+          ]
+        },
+        {
+          "code": "MACRO_EXPANSION",
+          "message": "Macro-expanded semantics/ranges are not supported",
+          "span": null,
+          "helper_chain": [
+            "main"
+          ]
+        },
+        {
+          "code": "UNKNOWN_CALL",
+          "message": "No supported body for harness",
+          "span": {
+            "start": 274,
+            "end": 310,
+            "line": 8,
+            "column": 42,
+            "end_line": 8
+          },
+          "helper_chain": [
+            "main",
+            "harness"
+          ]
+        }
+      ],
+      "pure": false,
+      "return_expression": "harness(argc, argv, kernel, 0, ((int *)((void *)0)))"
+    }
+  ],
+  "assumptions": [
+    "The C restrict contract for output/input is respected by callers",
+    "The original serial program has defined behavior and every executed access is within a valid live object",
+    "User extent: input[0:n] is a valid contiguous buffer covering all loop accesses",
+    "User extent: output[0:n] is a valid contiguous buffer covering all loop accesses"
+  ],
+  "recommendation": {
+    "target": "insufficient_evidence",
+    "confidence": "low",
+    "reason": "Safety is separate from profitability; no calibration or measured timings"
+  },
+  "artifacts": {
+    "analysis": "analysis.json",
+    "generated": "generated.c",
+    "diff": "patch.diff",
+    "validation": null,
+    "benchmark": null,
+    "report": "report.html"
+  },
+  "validation": {
+    "status": "not_run",
+    "reason": "Analysis does not execute programs",
+    "results": null
+  },
+  "benchmark": {
+    "status": "not_run",
+    "reason": "No timing trials performed",
+    "results": null
+  },
+  "gpu": {
+    "status": "syntax_checked",
+    "reason": "Host OpenMP syntax check passed; no GPU backend compilation or device execution verified",
+    "device": null,
+    "mandatory_offload": null,
+    "is_initial_device": null,
+    "compile_command": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-fsyntax-only",
+      "/Users/vian/.codex/worktrees/b5f9/segfault/submission/evidence/map-gpu/generated.c",
+      "-Xpreprocessor",
+      "-fopenmp",
+      "-I/opt/homebrew/opt/libomp/include",
+      "-L/opt/homebrew/opt/libomp/lib",
+      "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+      "-lomp"
+    ],
+    "host_syntax_check": {
+      "status": "ok",
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-O2",
+        "-fsyntax-only",
+        "/Users/vian/.codex/worktrees/b5f9/segfault/submission/evidence/map-gpu/generated.c",
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "clang: warning: -Wl,-rpath,/opt/homebrew/opt/libomp/lib: 'linker' input unused [-Wunused-command-line-argument]\nclang: warning: -lomp: 'linker' input unused [-Wunused-command-line-argument]\nclang: warning: argument unused during compilation: '-L/opt/homebrew/opt/libomp/lib' [-Wunused-command-line-argument]\n",
+      "elapsed_seconds": 0.028818458988098428,
+      "environment": {},
+      "source_sha256": "3043a64ec1e75a4e758c3d2a278d70fc8055abd1705039e6342cc70d93b987d1",
+      "runtime_header_sha256": "373c04441c1d87a81b9e571ff77ac4f011ba76ec13910c6dfe12f498244de219"
+    }
+  },
+  "errors": [],
+  "limitations": [
+    "C11, one translation unit, canonical unit-increment loops and direct acyclic helpers only.",
+    "Safe decisions assume defined serial C execution, valid in-bounds buffers and respected recorded restrict/user contracts.",
+    "No reductions, nested loops, pointer casts, indirect calls, volatile/atomic accesses, or macro-expanded kernels.",
+    "GPU extents require static array bounds or explicit configuration; generated does not mean device-verified.",
+    "No runtime validation, benchmarking or profitability calibration is performed by analysis."
+  ],
+  "transformation": {
+    "target": "gpu",
+    "loop_ids": [
+      "loop-158"
+    ],
+    "generated_sha256": "3043a64ec1e75a4e758c3d2a278d70fc8055abd1705039e6342cc70d93b987d1"
+  }
+}

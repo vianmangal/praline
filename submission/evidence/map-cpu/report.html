@@ -1,0 +1,581 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Praline evidence report</title><style>body{font:16px system-ui,sans-serif;line-height:1.5;color:#20252a;max-width:1100px;margin:32px auto;padding:0 24px}h1,h2,h3{line-height:1.25}h2{margin-top:36px;border-bottom:1px solid #ccc;padding-bottom:8px}pre{background:#f5f5f5;padding:16px;overflow:auto;font:13px ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}th,td{border:1px solid #ddd;text-align:left;padding:8px;vertical-align:top}th{background:#eee}a{color:#145882}details{margin:12px 0}</style><body><h1>Praline evidence report</h1><p>Recorded local run. Static analysis, generated code, tested equivalence, and measured performance are separate evidence stages.</p><h2>Run and source</h2><table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Run ID</td><td>08095d84-8c4a-40ee-9e5d-2e52c76e825d</td></tr><tr><td>Timestamp</td><td>2026-09-18T09:33:55.366655+00:00</td></tr><tr><td>Static stage</td><td>generated</td></tr><tr><td>Source</td><td>/Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c</td></tr><tr><td>Source SHA-256</td><td>fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e</td></tr></tbody></table><p>Raw evidence: <a href="analysis.json">analysis.json</a> · <a href="doctor.json">doctor.json</a> · <a href="generated.c">generated.c</a> · <a href="patch.diff">patch.diff</a> · <a href="validation.json">validation.json</a> · <a href="benchmark.json">benchmark.json</a></p><h2>Static loop decisions</h2><h3>loop-158 in kernel: safe</h3><pre>for (int i = 0; i &lt; n; ++i) {
+        output[i] = apply(input[i]);
+    }</pre><table><thead><tr><th>Code</th><th>Explanation</th><th>Source line</th><th>Helper chain</th></tr></thead><tbody><tr><td>INDEPENDENT_MAP</td><td>Every output index is injective; accesses to each written buffer use the same per-iteration index; other buffers are disjoint under the recorded contracts</td><td>4</td><td>loop-158</td></tr></tbody></table><h4>Assumptions and bounds</h4><pre>{
+  &quot;assumptions&quot;: [
+    &quot;The C restrict contract for output/input is respected by callers&quot;,
+    &quot;The original serial program has defined behavior and every executed access is within a valid live object&quot;
+  ],
+  &quot;trip_count&quot;: &quot;max(0, n - 0)&quot;,
+  &quot;mappings&quot;: [
+    {
+      &quot;name&quot;: &quot;input&quot;,
+      &quot;declaration_id&quot;: &quot;0xabb3e7f08&quot;,
+      &quot;direction&quot;: &quot;to&quot;,
+      &quot;extent&quot;: null,
+      &quot;extent_source&quot;: null
+    },
+    {
+      &quot;name&quot;: &quot;output&quot;,
+      &quot;declaration_id&quot;: &quot;0xabb3e7f88&quot;,
+      &quot;direction&quot;: &quot;tofrom&quot;,
+      &quot;extent&quot;: null,
+      &quot;extent_source&quot;: null
+    }
+  ]
+}</pre><h4>Access effects</h4><table><thead><tr><th>Access</th><th>Buffer/declaration</th><th>Index</th><th>Storage</th><th>Helper chain</th></tr></thead><tbody><tr><td>read</td><td>output / 0xabb3e7f88</td><td>None</td><td>parameter</td><td>loop-158</td></tr><tr><td>read</td><td>i / 0xabb3ec1d8</td><td>None</td><td>local</td><td>loop-158</td></tr><tr><td>write</td><td>output / 0xabb3e7f88</td><td>i</td><td>parameter</td><td>loop-158</td></tr><tr><td>read</td><td>input / 0xabb3e7f08</td><td>None</td><td>parameter</td><td>loop-158</td></tr><tr><td>read</td><td>i / 0xabb3ec1d8</td><td>None</td><td>local</td><td>loop-158</td></tr><tr><td>read</td><td>input / 0xabb3e7f08</td><td>i</td><td>parameter</td><td>loop-158</td></tr><tr><td>read</td><td>i / 0xabb3ec1d8</td><td>None</td><td>local</td><td>loop-158</td></tr><tr><td>read</td><td>n / 0xabb3ec018</td><td>None</td><td>parameter</td><td>loop-158</td></tr></tbody></table><p>Target recommendation: {&#x27;target&#x27;: &#x27;insufficient_evidence&#x27;, &#x27;confidence&#x27;: &#x27;low&#x27;, &#x27;reason&#x27;: &#x27;Safety is separate from profitability; no calibration or measured timings&#x27;}</p><h2>Helper effects</h2><details><summary>apply (effect purity: True)</summary><pre>{
+  &quot;id&quot;: &quot;0xabb3e7d60&quot;,
+  &quot;name&quot;: &quot;apply&quot;,
+  &quot;span&quot;: {
+    &quot;start&quot;: 21,
+    &quot;end&quot;: 74,
+    &quot;line&quot;: 2,
+    &quot;column&quot;: 1,
+    &quot;end_line&quot;: 2
+  },
+  &quot;parameters&quot;: [
+    {
+      &quot;id&quot;: &quot;0xabb3e7cc8&quot;,
+      &quot;name&quot;: &quot;value&quot;,
+      &quot;type&quot;: &quot;int&quot;
+    }
+  ],
+  &quot;effects&quot;: [
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0xabb3e7cc8&quot;,
+      &quot;name&quot;: &quot;value&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 58,
+        &quot;end&quot;: 63,
+        &quot;line&quot;: 2,
+        &quot;column&quot;: 38,
+        &quot;end_line&quot;: 2
+      },
+      &quot;helper_chain&quot;: [
+        &quot;apply&quot;
+      ]
+    }
+  ],
+  &quot;calls&quot;: [],
+  &quot;unknown_reasons&quot;: [],
+  &quot;pure&quot;: true,
+  &quot;return_expression&quot;: &quot;((value * 3) + 1)&quot;
+}</pre></details><details><summary>kernel (effect purity: False)</summary><pre>{
+  &quot;id&quot;: &quot;0xabb3ec100&quot;,
+  &quot;name&quot;: &quot;kernel&quot;,
+  &quot;span&quot;: {
+    &quot;start&quot;: 75,
+    &quot;end&quot;: 232,
+    &quot;line&quot;: 3,
+    &quot;column&quot;: 1,
+    &quot;end_line&quot;: 7
+  },
+  &quot;parameters&quot;: [
+    {
+      &quot;id&quot;: &quot;0xabb3e7f08&quot;,
+      &quot;name&quot;: &quot;input&quot;,
+      &quot;type&quot;: &quot;const int *restrict&quot;
+    },
+    {
+      &quot;id&quot;: &quot;0xabb3e7f88&quot;,
+      &quot;name&quot;: &quot;output&quot;,
+      &quot;type&quot;: &quot;int *restrict&quot;
+    },
+    {
+      &quot;id&quot;: &quot;0xabb3ec018&quot;,
+      &quot;name&quot;: &quot;n&quot;,
+      &quot;type&quot;: &quot;int&quot;
+    }
+  ],
+  &quot;effects&quot;: [
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0xabb3ec018&quot;,
+      &quot;name&quot;: &quot;n&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 178,
+        &quot;end&quot;: 179,
+        &quot;line&quot;: 4,
+        &quot;column&quot;: 25,
+        &quot;end_line&quot;: 4
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    },
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0xabb3e7f88&quot;,
+      &quot;name&quot;: &quot;output&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 196,
+        &quot;end&quot;: 202,
+        &quot;line&quot;: 5,
+        &quot;column&quot;: 9,
+        &quot;end_line&quot;: 5
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    },
+    {
+      &quot;kind&quot;: &quot;write&quot;,
+      &quot;declaration_id&quot;: &quot;0xabb3e7f88&quot;,
+      &quot;name&quot;: &quot;output&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: &quot;i&quot;,
+      &quot;span&quot;: {
+        &quot;start&quot;: 196,
+        &quot;end&quot;: 205,
+        &quot;line&quot;: 5,
+        &quot;column&quot;: 9,
+        &quot;end_line&quot;: 5
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    },
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0xabb3e7f08&quot;,
+      &quot;name&quot;: &quot;input&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 214,
+        &quot;end&quot;: 219,
+        &quot;line&quot;: 5,
+        &quot;column&quot;: 27,
+        &quot;end_line&quot;: 5
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    },
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0xabb3e7f08&quot;,
+      &quot;name&quot;: &quot;input&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: &quot;i&quot;,
+      &quot;span&quot;: {
+        &quot;start&quot;: 214,
+        &quot;end&quot;: 222,
+        &quot;line&quot;: 5,
+        &quot;column&quot;: 27,
+        &quot;end_line&quot;: 5
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    }
+  ],
+  &quot;calls&quot;: [
+    &quot;apply&quot;
+  ],
+  &quot;unknown_reasons&quot;: [
+    {
+      &quot;code&quot;: &quot;UNSUPPORTED_SYNTAX&quot;,
+      &quot;message&quot;: &quot;Unsupported AST node: ForStmt&quot;,
+      &quot;span&quot;: {
+        &quot;start&quot;: 158,
+        &quot;end&quot;: 230,
+        &quot;line&quot;: 4,
+        &quot;column&quot;: 5,
+        &quot;end_line&quot;: 6
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    }
+  ],
+  &quot;pure&quot;: false,
+  &quot;return_expression&quot;: null
+}</pre></details><details><summary>main (effect purity: False)</summary><pre>{
+  &quot;id&quot;: &quot;0xabb3ec718&quot;,
+  &quot;name&quot;: &quot;main&quot;,
+  &quot;span&quot;: {
+    &quot;start&quot;: 233,
+    &quot;end&quot;: 313,
+    &quot;line&quot;: 8,
+    &quot;column&quot;: 1,
+    &quot;end_line&quot;: 8
+  },
+  &quot;parameters&quot;: [
+    {
+      &quot;id&quot;: &quot;0xabb3ec5b0&quot;,
+      &quot;name&quot;: &quot;argc&quot;,
+      &quot;type&quot;: &quot;int&quot;
+    },
+    {
+      &quot;id&quot;: &quot;0xabb3ec630&quot;,
+      &quot;name&quot;: &quot;argv&quot;,
+      &quot;type&quot;: &quot;char **&quot;
+    }
+  ],
+  &quot;effects&quot;: [
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0xabb3ec5b0&quot;,
+      &quot;name&quot;: &quot;argc&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 282,
+        &quot;end&quot;: 286,
+        &quot;line&quot;: 8,
+        &quot;column&quot;: 50,
+        &quot;end_line&quot;: 8
+      },
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0xabb3ec630&quot;,
+      &quot;name&quot;: &quot;argv&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 288,
+        &quot;end&quot;: 292,
+        &quot;line&quot;: 8,
+        &quot;column&quot;: 56,
+        &quot;end_line&quot;: 8
+      },
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    }
+  ],
+  &quot;calls&quot;: [
+    &quot;harness&quot;
+  ],
+  &quot;unknown_reasons&quot;: [
+    {
+      &quot;code&quot;: &quot;MACRO_EXPANSION&quot;,
+      &quot;message&quot;: &quot;Macro-expanded semantics/ranges are not supported&quot;,
+      &quot;span&quot;: null,
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;code&quot;: &quot;MACRO_EXPANSION&quot;,
+      &quot;message&quot;: &quot;Macro-expanded semantics/ranges are not supported&quot;,
+      &quot;span&quot;: null,
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;code&quot;: &quot;MACRO_EXPANSION&quot;,
+      &quot;message&quot;: &quot;Macro-expanded semantics/ranges are not supported&quot;,
+      &quot;span&quot;: null,
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;code&quot;: &quot;UNSUPPORTED_ACCESS&quot;,
+      &quot;message&quot;: &quot;Pointer casts are not analyzed&quot;,
+      &quot;span&quot;: null,
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;code&quot;: &quot;MACRO_EXPANSION&quot;,
+      &quot;message&quot;: &quot;Macro-expanded semantics/ranges are not supported&quot;,
+      &quot;span&quot;: null,
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;code&quot;: &quot;UNKNOWN_CALL&quot;,
+      &quot;message&quot;: &quot;No supported body for harness&quot;,
+      &quot;span&quot;: {
+        &quot;start&quot;: 274,
+        &quot;end&quot;: 310,
+        &quot;line&quot;: 8,
+        &quot;column&quot;: 42,
+        &quot;end_line&quot;: 8
+      },
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;,
+        &quot;harness&quot;
+      ]
+    }
+  ],
+  &quot;pure&quot;: false,
+  &quot;return_expression&quot;: &quot;harness(argc, argv, kernel, 0, ((int *)((void *)0)))&quot;
+}</pre></details><h2>Target policy</h2><pre>{
+  &quot;target&quot;: &quot;insufficient_evidence&quot;,
+  &quot;confidence&quot;: &quot;low&quot;,
+  &quot;reason&quot;: &quot;Safety is separate from profitability; no calibration or measured timings&quot;
+}</pre><p>Effect purity alone does not establish iteration independence. Measured speedups below apply only to the recorded workload and environment.</p><h2>Generated source diff</h2><pre>--- /Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c
++++ generated.c
+@@ -1,7 +1,9 @@
+ #include &quot;runtime.h&quot;
+ static int apply(int value) { return value * 3 + 1; }
+ static void kernel(const int * restrict input, int * restrict output, int n) {
+-    for (int i = 0; i &lt; n; ++i) {
++    
++#pragma omp parallel for default(none) shared(input, n, output)
++for (int i = 0; i &lt; n; ++i) {
+         output[i] = apply(input[i]);
+     }
+ }
+</pre><h2>Whole-output validation</h2><p>Execution status: passed. Tested equivalence is not a proof for arbitrary inputs.</p><p>Comparison mode: integer, atol=0, rtol=0</p><table><thead><tr><th>Size</th><th>Seed</th><th>Threads</th><th>Result</th><th>Mismatched elements</th><th>Independent reference</th></tr></thead><tbody><tr><td>0</td><td>1</td><td>1</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>0</td><td>7</td><td>1</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1</td><td>1</td><td>1</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1</td><td>7</td><td>1</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1024</td><td>1</td><td>1</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1024</td><td>7</td><td>1</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>65536</td><td>1</td><td>1</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>65536</td><td>7</td><td>1</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1048576</td><td>1</td><td>1</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1048576</td><td>7</td><td>1</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>0</td><td>1</td><td>2</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>0</td><td>7</td><td>2</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1</td><td>1</td><td>2</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1</td><td>7</td><td>2</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1024</td><td>1</td><td>2</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1024</td><td>7</td><td>2</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>65536</td><td>1</td><td>2</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>65536</td><td>7</td><td>2</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1048576</td><td>1</td><td>2</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1048576</td><td>7</td><td>2</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>0</td><td>1</td><td>4</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>0</td><td>7</td><td>4</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1</td><td>1</td><td>4</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1</td><td>7</td><td>4</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1024</td><td>1</td><td>4</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1024</td><td>7</td><td>4</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>65536</td><td>1</td><td>4</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>65536</td><td>7</td><td>4</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1048576</td><td>1</td><td>4</td><td>passed</td><td>0</td><td>passed</td></tr><tr><td>1048576</td><td>7</td><td>4</td><td>passed</td><td>0</td><td>passed</td></tr></tbody></table><h2>Measured runtime</h2><p>Benchmark status: measured</p><pre>{
+  &quot;kernel&quot;: &quot;Program-reported elapsed kernel time, excludes allocation, initialization and JSON serialization&quot;,
+  &quot;end_to_end&quot;: &quot;Subprocess wall time includes harness launch/reaping overhead, startup, allocation, initialization, kernel, checksum, and JSON serialization&quot;,
+  &quot;gpu&quot;: &quot;Only device-verified mandatory offload qualifies as GPU evidence&quot;
+}</pre><table><thead><tr><th>Size</th><th>Seed</th><th>Threads</th><th>Serial kernel ms</th><th>Generated kernel ms</th><th>Generated spread ms</th><th>Kernel speedup</th><th>End-to-end speedup</th></tr></thead><tbody><tr><td>0</td><td>1</td><td>1</td><td>0.000000</td><td>0.244000</td><td>0.026000</td><td>Unavailable</td><td>0.846</td></tr><tr><td>0</td><td>1</td><td>2</td><td>0.000000</td><td>0.272000</td><td>0.052000</td><td>Unavailable</td><td>0.725</td></tr><tr><td>0</td><td>1</td><td>4</td><td>0.000000</td><td>0.270000</td><td>0.043000</td><td>Unavailable</td><td>0.743</td></tr><tr><td>0</td><td>7</td><td>1</td><td>0.000000</td><td>0.248000</td><td>0.047000</td><td>Unavailable</td><td>0.756</td></tr><tr><td>0</td><td>7</td><td>2</td><td>0.000000</td><td>0.278000</td><td>0.030000</td><td>Unavailable</td><td>0.712</td></tr><tr><td>0</td><td>7</td><td>4</td><td>0.000000</td><td>0.275000</td><td>0.039000</td><td>Unavailable</td><td>0.707</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0.000000</td><td>0.246000</td><td>0.036000</td><td>Unavailable</td><td>0.704</td></tr><tr><td>1</td><td>1</td><td>2</td><td>0.000000</td><td>0.247000</td><td>0.019000</td><td>Unavailable</td><td>0.760</td></tr><tr><td>1</td><td>1</td><td>4</td><td>0.000000</td><td>0.304000</td><td>0.140000</td><td>Unavailable</td><td>0.709</td></tr><tr><td>1</td><td>7</td><td>1</td><td>0.000000</td><td>0.244000</td><td>0.017000</td><td>Unavailable</td><td>0.738</td></tr><tr><td>1</td><td>7</td><td>2</td><td>0.000000</td><td>0.258000</td><td>0.028000</td><td>Unavailable</td><td>0.778</td></tr><tr><td>1</td><td>7</td><td>4</td><td>0.000000</td><td>0.284000</td><td>0.224000</td><td>Unavailable</td><td>0.765</td></tr><tr><td>1024</td><td>1</td><td>1</td><td>0.000000</td><td>0.273000</td><td>0.223000</td><td>Unavailable</td><td>0.738</td></tr><tr><td>1024</td><td>1</td><td>2</td><td>0.000000</td><td>0.282000</td><td>0.058000</td><td>Unavailable</td><td>0.761</td></tr><tr><td>1024</td><td>1</td><td>4</td><td>0.001000</td><td>0.278000</td><td>0.080000</td><td>0.004</td><td>0.705</td></tr><tr><td>1024</td><td>7</td><td>1</td><td>0.001000</td><td>0.249000</td><td>0.092000</td><td>0.004</td><td>0.755</td></tr><tr><td>1024</td><td>7</td><td>2</td><td>0.001000</td><td>0.277000</td><td>0.049000</td><td>0.004</td><td>0.720</td></tr><tr><td>1024</td><td>7</td><td>4</td><td>0.000000</td><td>0.307000</td><td>0.078000</td><td>Unavailable</td><td>0.728</td></tr><tr><td>65536</td><td>1</td><td>1</td><td>0.017000</td><td>0.276000</td><td>0.050000</td><td>0.062</td><td>0.760</td></tr><tr><td>65536</td><td>1</td><td>2</td><td>0.016000</td><td>0.285000</td><td>0.061000</td><td>0.056</td><td>0.727</td></tr><tr><td>65536</td><td>1</td><td>4</td><td>0.016000</td><td>0.295000</td><td>0.190000</td><td>0.054</td><td>0.821</td></tr><tr><td>65536</td><td>7</td><td>1</td><td>0.024000</td><td>0.307000</td><td>0.084000</td><td>0.078</td><td>0.699</td></tr><tr><td>65536</td><td>7</td><td>2</td><td>0.017000</td><td>0.290000</td><td>0.068000</td><td>0.059</td><td>0.759</td></tr><tr><td>65536</td><td>7</td><td>4</td><td>0.018000</td><td>0.287000</td><td>0.042000</td><td>0.063</td><td>0.771</td></tr><tr><td>1048576</td><td>1</td><td>1</td><td>0.267000</td><td>0.884000</td><td>0.143000</td><td>0.302</td><td>0.735</td></tr><tr><td>1048576</td><td>1</td><td>2</td><td>0.270000</td><td>0.588000</td><td>0.053000</td><td>0.459</td><td>0.878</td></tr><tr><td>1048576</td><td>1</td><td>4</td><td>0.273000</td><td>0.545000</td><td>0.249000</td><td>0.501</td><td>0.780</td></tr><tr><td>1048576</td><td>7</td><td>1</td><td>0.267000</td><td>0.809000</td><td>0.176000</td><td>0.330</td><td>0.803</td></tr><tr><td>1048576</td><td>7</td><td>2</td><td>0.277000</td><td>0.609000</td><td>0.076000</td><td>0.455</td><td>0.849</td></tr><tr><td>1048576</td><td>7</td><td>4</td><td>0.276000</td><td>0.459000</td><td>0.059000</td><td>0.601</td><td>0.858</td></tr></tbody></table><p>Every trial, command, timer resolution and warmup is retained in benchmark.json. Timing spread is max minus min. Ratios at or below timer resolution are unavailable. Slowdowns are valid evidence.</p><h2>GPU verification</h2><pre>{
+  &quot;status&quot;: &quot;unavailable&quot;,
+  &quot;reason&quot;: &quot;GPU capability and device execution have not been checked&quot;,
+  &quot;device&quot;: null,
+  &quot;mandatory_offload&quot;: null,
+  &quot;is_initial_device&quot;: null,
+  &quot;compile_command&quot;: null
+}</pre><p>Host fallback does not count as GPU execution. GPU timing requires mandatory offload and evidence from the actual generated kernel.</p><h2>Compiler and environment</h2><pre>{
+  &quot;compiler&quot;: {
+    &quot;executable&quot;: &quot;clang&quot;,
+    &quot;version&quot;: &quot;Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin&quot;,
+    &quot;command&quot;: [
+      &quot;clang&quot;,
+      &quot;-std=c11&quot;,
+      &quot;-Xclang&quot;,
+      &quot;-fopenmp&quot;,
+      &quot;-Xclang&quot;,
+      &quot;-ast-dump=json&quot;,
+      &quot;-fsyntax-only&quot;,
+      &quot;/Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c&quot;
+    ],
+    &quot;diagnostics&quot;: &quot;&quot;
+  },
+  &quot;doctor&quot;: {
+    &quot;status&quot;: &quot;ok&quot;,
+    &quot;environment&quot;: {
+      &quot;system&quot;: &quot;Darwin&quot;,
+      &quot;release&quot;: &quot;25.6.0&quot;,
+      &quot;machine&quot;: &quot;arm64&quot;,
+      &quot;processor&quot;: &quot;arm&quot;,
+      &quot;cpu_count&quot;: 10,
+      &quot;python&quot;: &quot;3.14.5&quot;
+    },
+    &quot;compilers&quot;: [
+      {
+        &quot;path&quot;: &quot;/usr/bin/clang&quot;,
+        &quot;version&quot;: &quot;Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin&quot;,
+        &quot;serial&quot;: {
+          &quot;status&quot;: &quot;ok&quot;,
+          &quot;command&quot;: [
+            &quot;/usr/bin/clang&quot;,
+            &quot;-std=c11&quot;,
+            &quot;-O2&quot;,
+            &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe.c&quot;,
+            &quot;-o&quot;,
+            &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe&quot;
+          ],
+          &quot;returncode&quot;: 0,
+          &quot;stdout&quot;: &quot;&quot;,
+          &quot;stderr&quot;: &quot;&quot;,
+          &quot;elapsed_seconds&quot;: 0.036665249994257465,
+          &quot;environment&quot;: {}
+        },
+        &quot;clang_ast_status&quot;: &quot;ok&quot;,
+        &quot;openmp_attempts&quot;: [
+          {
+            &quot;flags&quot;: [
+              &quot;-fopenmp&quot;
+            ],
+            &quot;compile&quot;: {
+              &quot;status&quot;: &quot;failed&quot;,
+              &quot;command&quot;: [
+                &quot;/usr/bin/clang&quot;,
+                &quot;-std=c11&quot;,
+                &quot;-O2&quot;,
+                &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe.c&quot;,
+                &quot;-o&quot;,
+                &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe&quot;,
+                &quot;-fopenmp&quot;
+              ],
+              &quot;returncode&quot;: 1,
+              &quot;stdout&quot;: &quot;&quot;,
+              &quot;stderr&quot;: &quot;clang: error: unsupported option &#x27;-fopenmp&#x27;\nclang: error: unsupported option &#x27;-fopenmp&#x27;\n&quot;,
+              &quot;elapsed_seconds&quot;: 0.013289875001646578,
+              &quot;environment&quot;: {}
+            },
+            &quot;execution&quot;: null
+          },
+          {
+            &quot;flags&quot;: [
+              &quot;-Xpreprocessor&quot;,
+              &quot;-fopenmp&quot;,
+              &quot;-I/opt/homebrew/opt/libomp/include&quot;,
+              &quot;-L/opt/homebrew/opt/libomp/lib&quot;,
+              &quot;-Wl,-rpath,/opt/homebrew/opt/libomp/lib&quot;,
+              &quot;-lomp&quot;
+            ],
+            &quot;compile&quot;: {
+              &quot;status&quot;: &quot;ok&quot;,
+              &quot;command&quot;: [
+                &quot;/usr/bin/clang&quot;,
+                &quot;-std=c11&quot;,
+                &quot;-O2&quot;,
+                &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe.c&quot;,
+                &quot;-o&quot;,
+                &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe&quot;,
+                &quot;-Xpreprocessor&quot;,
+                &quot;-fopenmp&quot;,
+                &quot;-I/opt/homebrew/opt/libomp/include&quot;,
+                &quot;-L/opt/homebrew/opt/libomp/lib&quot;,
+                &quot;-Wl,-rpath,/opt/homebrew/opt/libomp/lib&quot;,
+                &quot;-lomp&quot;
+              ],
+              &quot;returncode&quot;: 0,
+              &quot;stdout&quot;: &quot;&quot;,
+              &quot;stderr&quot;: &quot;&quot;,
+              &quot;elapsed_seconds&quot;: 0.04693058397970162,
+              &quot;environment&quot;: {}
+            },
+            &quot;execution&quot;: {
+              &quot;status&quot;: &quot;ok&quot;,
+              &quot;command&quot;: [
+                &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe&quot;
+              ],
+              &quot;returncode&quot;: 0,
+              &quot;stdout&quot;: &quot;2\n&quot;,
+              &quot;stderr&quot;: &quot;&quot;,
+              &quot;elapsed_seconds&quot;: 0.14127454199478962,
+              &quot;environment&quot;: {
+                &quot;OMP_NUM_THREADS&quot;: &quot;2&quot;
+              }
+            }
+          }
+        ]
+      }
+    ],
+    &quot;selected&quot;: {
+      &quot;path&quot;: &quot;/usr/bin/clang&quot;,
+      &quot;version&quot;: &quot;Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin&quot;,
+      &quot;openmp_flags&quot;: [
+        &quot;-Xpreprocessor&quot;,
+        &quot;-fopenmp&quot;,
+        &quot;-I/opt/homebrew/opt/libomp/include&quot;,
+        &quot;-L/opt/homebrew/opt/libomp/lib&quot;,
+        &quot;-Wl,-rpath,/opt/homebrew/opt/libomp/lib&quot;,
+        &quot;-lomp&quot;
+      ]
+    },
+    &quot;cpu_openmp&quot;: {
+      &quot;status&quot;: &quot;verified&quot;,
+      &quot;threads&quot;: 2,
+      &quot;compile&quot;: {
+        &quot;status&quot;: &quot;ok&quot;,
+        &quot;command&quot;: [
+          &quot;/usr/bin/clang&quot;,
+          &quot;-std=c11&quot;,
+          &quot;-O2&quot;,
+          &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe.c&quot;,
+          &quot;-o&quot;,
+          &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe&quot;,
+          &quot;-Xpreprocessor&quot;,
+          &quot;-fopenmp&quot;,
+          &quot;-I/opt/homebrew/opt/libomp/include&quot;,
+          &quot;-L/opt/homebrew/opt/libomp/lib&quot;,
+          &quot;-Wl,-rpath,/opt/homebrew/opt/libomp/lib&quot;,
+          &quot;-lomp&quot;
+        ],
+        &quot;returncode&quot;: 0,
+        &quot;stdout&quot;: &quot;&quot;,
+        &quot;stderr&quot;: &quot;&quot;,
+        &quot;elapsed_seconds&quot;: 0.04693058397970162,
+        &quot;environment&quot;: {}
+      },
+      &quot;execution&quot;: {
+        &quot;status&quot;: &quot;ok&quot;,
+        &quot;command&quot;: [
+          &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe&quot;
+        ],
+        &quot;returncode&quot;: 0,
+        &quot;stdout&quot;: &quot;2\n&quot;,
+        &quot;stderr&quot;: &quot;&quot;,
+        &quot;elapsed_seconds&quot;: 0.14127454199478962,
+        &quot;environment&quot;: {
+          &quot;OMP_NUM_THREADS&quot;: &quot;2&quot;
+        }
+      }
+    },
+    &quot;gpu&quot;: {
+      &quot;status&quot;: &quot;unavailable&quot;,
+      &quot;reason&quot;: &quot;Mandatory target execution did not establish a non-host device&quot;,
+      &quot;offload_flags&quot;: [],
+      &quot;compile&quot;: {
+        &quot;status&quot;: &quot;ok&quot;,
+        &quot;command&quot;: [
+          &quot;/usr/bin/clang&quot;,
+          &quot;-std=c11&quot;,
+          &quot;-O2&quot;,
+          &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe.c&quot;,
+          &quot;-o&quot;,
+          &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe&quot;,
+          &quot;-Xpreprocessor&quot;,
+          &quot;-fopenmp&quot;,
+          &quot;-I/opt/homebrew/opt/libomp/include&quot;,
+          &quot;-L/opt/homebrew/opt/libomp/lib&quot;,
+          &quot;-Wl,-rpath,/opt/homebrew/opt/libomp/lib&quot;,
+          &quot;-lomp&quot;
+        ],
+        &quot;returncode&quot;: 0,
+        &quot;stdout&quot;: &quot;&quot;,
+        &quot;stderr&quot;: &quot;&quot;,
+        &quot;elapsed_seconds&quot;: 0.058398833993123844,
+        &quot;environment&quot;: {}
+      },
+      &quot;execution&quot;: {
+        &quot;status&quot;: &quot;failed&quot;,
+        &quot;command&quot;: [
+          &quot;/var/folders/vz/7w44_c8134s81rrr3083ktdr0000gn/T/praline-doctor-9xt0nfqn/probe&quot;
+        ],
+        &quot;returncode&quot;: 1,
+        &quot;stdout&quot;: &quot;0 1\n&quot;,
+        &quot;stderr&quot;: &quot;&quot;,
+        &quot;elapsed_seconds&quot;: 0.10200283298036084,
+        &quot;environment&quot;: {
+          &quot;OMP_TARGET_OFFLOAD&quot;: &quot;MANDATORY&quot;
+        }
+      },
+      &quot;device_metadata&quot;: {
+        &quot;model&quot;: null,
+        &quot;driver&quot;: null,
+        &quot;backend&quot;: null
+      }
+    }
+  }
+}</pre><h2>Errors and limitations</h2><pre>{
+  &quot;errors&quot;: [],
+  &quot;limitations&quot;: [
+    &quot;C11, one translation unit, canonical unit-increment loops and direct acyclic helpers only.&quot;,
+    &quot;Safe decisions assume defined serial C execution, valid in-bounds buffers and respected recorded restrict/user contracts.&quot;,
+    &quot;No reductions, nested loops, pointer casts, indirect calls, volatile/atomic accesses, or macro-expanded kernels.&quot;,
+    &quot;GPU extents require static array bounds or explicit configuration; generated does not mean device-verified.&quot;,
+    &quot;No runtime validation, benchmarking or profitability calibration is performed by analysis.&quot;
+  ]
+}</pre><details><summary>Full original source</summary><pre>#include &quot;runtime.h&quot;
+static int apply(int value) { return value * 3 + 1; }
+static void kernel(const int * restrict input, int * restrict output, int n) {
+    for (int i = 0; i &lt; n; ++i) {
+        output[i] = apply(input[i]);
+    }
+}
+int main(int argc, char **argv) { return harness(argc, argv, kernel, 0, NULL); }
+</pre></details></body></html>

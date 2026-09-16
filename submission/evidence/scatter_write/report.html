@@ -1,0 +1,365 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Praline evidence report</title><style>body{font:16px system-ui,sans-serif;line-height:1.5;color:#20252a;max-width:1100px;margin:32px auto;padding:0 24px}h1,h2,h3{line-height:1.25}h2{margin-top:36px;border-bottom:1px solid #ccc;padding-bottom:8px}pre{background:#f5f5f5;padding:16px;overflow:auto;font:13px ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}th,td{border:1px solid #ddd;text-align:left;padding:8px;vertical-align:top}th{background:#eee}a{color:#145882}details{margin:12px 0}</style><body><h1>Praline evidence report</h1><p>Recorded local run. Static analysis, generated code, tested equivalence, and measured performance are separate evidence stages.</p><h2>Run and source</h2><table><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Run ID</td><td>e662ed7a-aca2-4a7d-b27e-4dc72418b3e6</td></tr><tr><td>Timestamp</td><td>2026-09-18T09:34:01.725367+00:00</td></tr><tr><td>Static stage</td><td>analyzed</td></tr><tr><td>Source</td><td>/Users/vian/.codex/worktrees/b5f9/segfault/examples/scatter_write.c</td></tr><tr><td>Source SHA-256</td><td>ed3add4e3a97a14a19b9b5060f10021b434b8dc82ea12e7ab214c15d30be8a6e</td></tr></tbody></table><p>Raw evidence: <a href="analysis.json">analysis.json</a></p><h2>Static loop decisions</h2><h3>loop-158 in kernel: unsafe</h3><pre>for (int i = 0; i &lt; n; ++i) {
+        output[i % 2] = apply(input[i]);
+    }</pre><table><thead><tr><th>Code</th><th>Explanation</th><th>Source line</th><th>Helper chain</th></tr></thead><tbody><tr><td>WRITE_COLLISION</td><td>Modulo/scatter output output is prohibited</td><td>5</td><td>loop-158</td></tr><tr><td>UNSUPPORTED_ACCESS</td><td>Unsupported index (i % 2)</td><td>5</td><td>loop-158</td></tr></tbody></table><h4>Assumptions and bounds</h4><pre>{
+  &quot;assumptions&quot;: [
+    &quot;The C restrict contract for output/input is respected by callers&quot;,
+    &quot;The original serial program has defined behavior and every executed access is within a valid live object&quot;
+  ],
+  &quot;trip_count&quot;: &quot;max(0, n - 0)&quot;,
+  &quot;mappings&quot;: [
+    {
+      &quot;name&quot;: &quot;input&quot;,
+      &quot;declaration_id&quot;: &quot;0x9513e7f08&quot;,
+      &quot;direction&quot;: &quot;to&quot;,
+      &quot;extent&quot;: null,
+      &quot;extent_source&quot;: null
+    },
+    {
+      &quot;name&quot;: &quot;output&quot;,
+      &quot;declaration_id&quot;: &quot;0x9513e7f88&quot;,
+      &quot;direction&quot;: &quot;tofrom&quot;,
+      &quot;extent&quot;: null,
+      &quot;extent_source&quot;: null
+    }
+  ]
+}</pre><h4>Access effects</h4><table><thead><tr><th>Access</th><th>Buffer/declaration</th><th>Index</th><th>Storage</th><th>Helper chain</th></tr></thead><tbody><tr><td>read</td><td>output / 0x9513e7f88</td><td>None</td><td>parameter</td><td>loop-158</td></tr><tr><td>read</td><td>i / 0x9513ec1d8</td><td>None</td><td>local</td><td>loop-158</td></tr><tr><td>write</td><td>output / 0x9513e7f88</td><td>(i % 2)</td><td>parameter</td><td>loop-158</td></tr><tr><td>read</td><td>input / 0x9513e7f08</td><td>None</td><td>parameter</td><td>loop-158</td></tr><tr><td>read</td><td>i / 0x9513ec1d8</td><td>None</td><td>local</td><td>loop-158</td></tr><tr><td>read</td><td>input / 0x9513e7f08</td><td>i</td><td>parameter</td><td>loop-158</td></tr><tr><td>read</td><td>i / 0x9513ec1d8</td><td>None</td><td>local</td><td>loop-158</td></tr><tr><td>read</td><td>n / 0x9513ec018</td><td>None</td><td>parameter</td><td>loop-158</td></tr></tbody></table><p>Target recommendation: {&#x27;target&#x27;: &#x27;sequential&#x27;, &#x27;confidence&#x27;: &#x27;high&#x27;, &#x27;reason&#x27;: &#x27;Only statically safe loops can be transformed&#x27;}</p><h2>Helper effects</h2><details><summary>apply (effect purity: True)</summary><pre>{
+  &quot;id&quot;: &quot;0x9513e7d60&quot;,
+  &quot;name&quot;: &quot;apply&quot;,
+  &quot;span&quot;: {
+    &quot;start&quot;: 21,
+    &quot;end&quot;: 74,
+    &quot;line&quot;: 2,
+    &quot;column&quot;: 1,
+    &quot;end_line&quot;: 2
+  },
+  &quot;parameters&quot;: [
+    {
+      &quot;id&quot;: &quot;0x9513e7cc8&quot;,
+      &quot;name&quot;: &quot;value&quot;,
+      &quot;type&quot;: &quot;int&quot;
+    }
+  ],
+  &quot;effects&quot;: [
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0x9513e7cc8&quot;,
+      &quot;name&quot;: &quot;value&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 58,
+        &quot;end&quot;: 63,
+        &quot;line&quot;: 2,
+        &quot;column&quot;: 38,
+        &quot;end_line&quot;: 2
+      },
+      &quot;helper_chain&quot;: [
+        &quot;apply&quot;
+      ]
+    }
+  ],
+  &quot;calls&quot;: [],
+  &quot;unknown_reasons&quot;: [],
+  &quot;pure&quot;: true,
+  &quot;return_expression&quot;: &quot;((value * 3) + 1)&quot;
+}</pre></details><details><summary>kernel (effect purity: False)</summary><pre>{
+  &quot;id&quot;: &quot;0x9513ec100&quot;,
+  &quot;name&quot;: &quot;kernel&quot;,
+  &quot;span&quot;: {
+    &quot;start&quot;: 75,
+    &quot;end&quot;: 236,
+    &quot;line&quot;: 3,
+    &quot;column&quot;: 1,
+    &quot;end_line&quot;: 7
+  },
+  &quot;parameters&quot;: [
+    {
+      &quot;id&quot;: &quot;0x9513e7f08&quot;,
+      &quot;name&quot;: &quot;input&quot;,
+      &quot;type&quot;: &quot;const int *restrict&quot;
+    },
+    {
+      &quot;id&quot;: &quot;0x9513e7f88&quot;,
+      &quot;name&quot;: &quot;output&quot;,
+      &quot;type&quot;: &quot;int *restrict&quot;
+    },
+    {
+      &quot;id&quot;: &quot;0x9513ec018&quot;,
+      &quot;name&quot;: &quot;n&quot;,
+      &quot;type&quot;: &quot;int&quot;
+    }
+  ],
+  &quot;effects&quot;: [
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0x9513ec018&quot;,
+      &quot;name&quot;: &quot;n&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 178,
+        &quot;end&quot;: 179,
+        &quot;line&quot;: 4,
+        &quot;column&quot;: 25,
+        &quot;end_line&quot;: 4
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    },
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0x9513e7f88&quot;,
+      &quot;name&quot;: &quot;output&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 196,
+        &quot;end&quot;: 202,
+        &quot;line&quot;: 5,
+        &quot;column&quot;: 9,
+        &quot;end_line&quot;: 5
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    },
+    {
+      &quot;kind&quot;: &quot;write&quot;,
+      &quot;declaration_id&quot;: &quot;0x9513e7f88&quot;,
+      &quot;name&quot;: &quot;output&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: &quot;(i % 2)&quot;,
+      &quot;span&quot;: {
+        &quot;start&quot;: 196,
+        &quot;end&quot;: 209,
+        &quot;line&quot;: 5,
+        &quot;column&quot;: 9,
+        &quot;end_line&quot;: 5
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    },
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0x9513e7f08&quot;,
+      &quot;name&quot;: &quot;input&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 218,
+        &quot;end&quot;: 223,
+        &quot;line&quot;: 5,
+        &quot;column&quot;: 31,
+        &quot;end_line&quot;: 5
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    },
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0x9513e7f08&quot;,
+      &quot;name&quot;: &quot;input&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: &quot;i&quot;,
+      &quot;span&quot;: {
+        &quot;start&quot;: 218,
+        &quot;end&quot;: 226,
+        &quot;line&quot;: 5,
+        &quot;column&quot;: 31,
+        &quot;end_line&quot;: 5
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    }
+  ],
+  &quot;calls&quot;: [
+    &quot;apply&quot;
+  ],
+  &quot;unknown_reasons&quot;: [
+    {
+      &quot;code&quot;: &quot;UNSUPPORTED_SYNTAX&quot;,
+      &quot;message&quot;: &quot;Unsupported AST node: ForStmt&quot;,
+      &quot;span&quot;: {
+        &quot;start&quot;: 158,
+        &quot;end&quot;: 234,
+        &quot;line&quot;: 4,
+        &quot;column&quot;: 5,
+        &quot;end_line&quot;: 6
+      },
+      &quot;helper_chain&quot;: [
+        &quot;kernel&quot;
+      ]
+    }
+  ],
+  &quot;pure&quot;: false,
+  &quot;return_expression&quot;: null
+}</pre></details><details><summary>main (effect purity: False)</summary><pre>{
+  &quot;id&quot;: &quot;0x9513ec758&quot;,
+  &quot;name&quot;: &quot;main&quot;,
+  &quot;span&quot;: {
+    &quot;start&quot;: 237,
+    &quot;end&quot;: 317,
+    &quot;line&quot;: 8,
+    &quot;column&quot;: 1,
+    &quot;end_line&quot;: 8
+  },
+  &quot;parameters&quot;: [
+    {
+      &quot;id&quot;: &quot;0x9513ec5f0&quot;,
+      &quot;name&quot;: &quot;argc&quot;,
+      &quot;type&quot;: &quot;int&quot;
+    },
+    {
+      &quot;id&quot;: &quot;0x9513ec670&quot;,
+      &quot;name&quot;: &quot;argv&quot;,
+      &quot;type&quot;: &quot;char **&quot;
+    }
+  ],
+  &quot;effects&quot;: [
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0x9513ec5f0&quot;,
+      &quot;name&quot;: &quot;argc&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 286,
+        &quot;end&quot;: 290,
+        &quot;line&quot;: 8,
+        &quot;column&quot;: 50,
+        &quot;end_line&quot;: 8
+      },
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;kind&quot;: &quot;read&quot;,
+      &quot;declaration_id&quot;: &quot;0x9513ec670&quot;,
+      &quot;name&quot;: &quot;argv&quot;,
+      &quot;storage&quot;: &quot;parameter&quot;,
+      &quot;index&quot;: null,
+      &quot;span&quot;: {
+        &quot;start&quot;: 292,
+        &quot;end&quot;: 296,
+        &quot;line&quot;: 8,
+        &quot;column&quot;: 56,
+        &quot;end_line&quot;: 8
+      },
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    }
+  ],
+  &quot;calls&quot;: [
+    &quot;harness&quot;
+  ],
+  &quot;unknown_reasons&quot;: [
+    {
+      &quot;code&quot;: &quot;MACRO_EXPANSION&quot;,
+      &quot;message&quot;: &quot;Macro-expanded semantics/ranges are not supported&quot;,
+      &quot;span&quot;: null,
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;code&quot;: &quot;MACRO_EXPANSION&quot;,
+      &quot;message&quot;: &quot;Macro-expanded semantics/ranges are not supported&quot;,
+      &quot;span&quot;: null,
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;code&quot;: &quot;MACRO_EXPANSION&quot;,
+      &quot;message&quot;: &quot;Macro-expanded semantics/ranges are not supported&quot;,
+      &quot;span&quot;: null,
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;code&quot;: &quot;UNSUPPORTED_ACCESS&quot;,
+      &quot;message&quot;: &quot;Pointer casts are not analyzed&quot;,
+      &quot;span&quot;: null,
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;code&quot;: &quot;MACRO_EXPANSION&quot;,
+      &quot;message&quot;: &quot;Macro-expanded semantics/ranges are not supported&quot;,
+      &quot;span&quot;: null,
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;
+      ]
+    },
+    {
+      &quot;code&quot;: &quot;UNKNOWN_CALL&quot;,
+      &quot;message&quot;: &quot;No supported body for harness&quot;,
+      &quot;span&quot;: {
+        &quot;start&quot;: 278,
+        &quot;end&quot;: 314,
+        &quot;line&quot;: 8,
+        &quot;column&quot;: 42,
+        &quot;end_line&quot;: 8
+      },
+      &quot;helper_chain&quot;: [
+        &quot;main&quot;,
+        &quot;harness&quot;
+      ]
+    }
+  ],
+  &quot;pure&quot;: false,
+  &quot;return_expression&quot;: &quot;harness(argc, argv, kernel, 3, ((int *)((void *)0)))&quot;
+}</pre></details><h2>Target policy</h2><pre>{
+  &quot;target&quot;: &quot;sequential&quot;,
+  &quot;confidence&quot;: &quot;high&quot;,
+  &quot;reason&quot;: &quot;Only statically safe loops can be transformed&quot;
+}</pre><p>Effect purity alone does not establish iteration independence. Measured speedups below apply only to the recorded workload and environment.</p><h2>Generated source diff</h2><p>Unavailable: transformation has not produced a patch.</p><h2>Whole-output validation</h2><p>Unavailable: validation has not run.</p><h2>Measured runtime</h2><p>Unavailable: no timing measurements.</p><h2>GPU verification</h2><pre>{
+  &quot;status&quot;: &quot;unavailable&quot;,
+  &quot;reason&quot;: &quot;GPU capability and device execution have not been checked&quot;,
+  &quot;device&quot;: null,
+  &quot;mandatory_offload&quot;: null,
+  &quot;is_initial_device&quot;: null,
+  &quot;compile_command&quot;: null
+}</pre><p>Host fallback does not count as GPU execution. GPU timing requires mandatory offload and evidence from the actual generated kernel.</p><h2>Compiler and environment</h2><pre>{
+  &quot;compiler&quot;: {
+    &quot;executable&quot;: &quot;clang&quot;,
+    &quot;version&quot;: &quot;Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin&quot;,
+    &quot;command&quot;: [
+      &quot;clang&quot;,
+      &quot;-std=c11&quot;,
+      &quot;-Xclang&quot;,
+      &quot;-fopenmp&quot;,
+      &quot;-Xclang&quot;,
+      &quot;-ast-dump=json&quot;,
+      &quot;-fsyntax-only&quot;,
+      &quot;/Users/vian/.codex/worktrees/b5f9/segfault/examples/scatter_write.c&quot;
+    ],
+    &quot;diagnostics&quot;: &quot;&quot;
+  },
+  &quot;doctor&quot;: null
+}</pre><h2>Errors and limitations</h2><pre>{
+  &quot;errors&quot;: [],
+  &quot;limitations&quot;: [
+    &quot;C11, one translation unit, canonical unit-increment loops and direct acyclic helpers only.&quot;,
+    &quot;Safe decisions assume defined serial C execution, valid in-bounds buffers and respected recorded restrict/user contracts.&quot;,
+    &quot;No reductions, nested loops, pointer casts, indirect calls, volatile/atomic accesses, or macro-expanded kernels.&quot;,
+    &quot;GPU extents require static array bounds or explicit configuration; generated does not mean device-verified.&quot;,
+    &quot;No runtime validation, benchmarking or profitability calibration is performed by analysis.&quot;
+  ]
+}</pre><details><summary>Full original source</summary><pre>#include &quot;runtime.h&quot;
+static int apply(int value) { return value * 3 + 1; }
+static void kernel(const int * restrict input, int * restrict output, int n) {
+    for (int i = 0; i &lt; n; ++i) {
+        output[i % 2] = apply(input[i]);
+    }
+}
+int main(int argc, char **argv) { return harness(argc, argv, kernel, 3, NULL); }
+</pre></details></body></html>
