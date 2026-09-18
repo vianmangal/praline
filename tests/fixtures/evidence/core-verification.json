@@ -1,0 +1,126 @@
+{
+  "recorded_at": "2026-09-18T09:43:16.061332+00:00",
+  "purpose": "Compiler correctness evidence; no benchmark measurements",
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:11:29) [Clang 20.1.8 ]",
+    "clang": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+    "openmp_flags": [
+      "-Xclang",
+      "-fopenmp",
+      "-L/opt/homebrew/opt/libomp/lib",
+      "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+      "-lomp"
+    ]
+  },
+  "tests": {
+    "command": [
+      "/opt/anaconda3/bin/python",
+      "-m",
+      "pytest",
+      "tests/unit",
+      "-q",
+      "-p",
+      "no:cacheprovider"
+    ],
+    "returncode": 0,
+    "stdout": ".......................................................s                 [100%]\n55 passed, 1 skipped in 5.79s\n",
+    "stderr": ""
+  },
+  "cpu": {
+    "probe_output": "workers=2 devices=0",
+    "kernels": [
+      "helper_map",
+      "pointer_helper"
+    ],
+    "sizes": [
+      0,
+      1,
+      2,
+      31,
+      1024,
+      65536
+    ],
+    "seeds": [
+      1,
+      17,
+      12345
+    ],
+    "thread_counts": [
+      1,
+      4
+    ],
+    "program_executions": 144,
+    "comparison": "Every element plus untouched sentinels against independent integer formulas",
+    "wrong_output_control": "Detected and rejected"
+  },
+  "gpu": {
+    "status": "syntax_checked",
+    "device_execution": "unverified",
+    "reason": "Local OpenMP probe exposes 0 devices; real offload test skipped without compatible-host flags",
+    "syntax_checks": [
+      {
+        "kernel": "helper_map",
+        "command": [
+          "clang",
+          "-std=c11",
+          "-Xclang",
+          "-fopenmp",
+          "-Werror",
+          "-fsyntax-only",
+          "<temporary-run>/generated.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "generated_sha256": "69dd676d3011286483b51e5bcd29dec69df7a457efda8fa5026fff5cb080fa52",
+        "status": "syntax_checked",
+        "device_execution": "unverified"
+      },
+      {
+        "kernel": "pointer_helper",
+        "command": [
+          "clang",
+          "-std=c11",
+          "-Xclang",
+          "-fopenmp",
+          "-Werror",
+          "-fsyntax-only",
+          "<temporary-run>/generated.c"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "generated_sha256": "76a52feafe7ee5d81930e166825750595772205fe56075062f667263340be712",
+        "status": "syntax_checked",
+        "device_execution": "unverified"
+      }
+    ],
+    "mandatory_offload": null,
+    "is_initial_device": null
+  },
+  "source_sha256": {
+    "praline/analysis/__init__.py": "0fe385b90b3a04124bcd7cb90708823403ff55b500ebfa9f555b090e0a47348c",
+    "praline/analysis/dependencies.py": "8fbd9dddbb3f28312b3cca08f465bcf1268dde12fd60d194ddad2feed9bcc4ee",
+    "praline/analysis/effects.py": "834b4fd77f67fb02083236dc3b74cf30d95209cc39796b7e9ebb84fcc4f6db59",
+    "praline/analysis/loops.py": "04143e49c6af557ee8d840595f6d27641d2c0e452be1e2d5cd42d8f45543608c",
+    "praline/frontend/__init__.py": "eb2d577dcb7f1470b40e8226c9b1be3d99a541a014c910a7fde610158ae6f1a1",
+    "praline/frontend/clang_ast.py": "eeaa2b547e69f3edc877aff722be5748faaaf95c874a93c3a2bddc1d647b45a1",
+    "praline/model.py": "0811c22c9decc7f520284906404a817d88e32c3678713091d7cab537d6326d92",
+    "praline/transform/__init__.py": "7e7c0c53e56bc037b435561cc83bc757356914c6c3b3a7f953b0727b47e89406",
+    "praline/transform/cpu.py": "3e5effe0108f4f6ec93c391e354d4dd41a8d3f28ca544d53f7472b576722377e",
+    "praline/transform/edits.py": "6ee5b5988f52508a13d9a259123823e8c633072e342a55024770e76e6914bbb1",
+    "praline/transform/gpu.py": "3f361e4ef2588b774a71d99704095b831ad7e6cc240aac3a45f0bb574800d9dc",
+    "tests/fixtures/alias_unknown.c": "7ee1bba09fb64ae53f31988417b4158ceaa16ed90435848deb077d9ec53c7651",
+    "tests/fixtures/global_write.c": "144e97dc115ca3c14f1437ce26348798646a6f90d90dfc4ac1098d9bf78186ef",
+    "tests/fixtures/helper_map.c": "2d073ce063676f71e15abda07bb6b0351bf19143d8b718e8899b37d98da29c1f",
+    "tests/fixtures/map_driver.c": "cea7af24bb5f909229f9ec5e8ca2e7683046c5d3ede6ed476c924f271db1f249",
+    "tests/fixtures/pointer_helper.c": "fb75c903b861da450d1ab3ef21a80bdd3f949a16517465742d423ba47efaac8e",
+    "tests/fixtures/prefix_dependency.c": "ef5220adc6ae8a266bf2de33c05c1ca02305ec0afa1d6a02049d7fd48d1167c8",
+    "tests/fixtures/scatter_write.c": "e87e22609b06c84483be60894917eeac0572463a002c950cb36ceec3e6e4ca1f",
+    "tests/fixtures/unknown_call.c": "edffd721a03a5f796fc8947773aa3920e22134b11abfa34944c872b59e4f7a78",
+    "tests/unit/test_contract.py": "028296102d9423ec104f3f2065356cb7bb10af7ac06c4a2b32a983fb689e1a5c",
+    "tests/unit/test_core.py": "037fe9801a14eb506e88b1b1b2e2eb1ce02a6e03aa7c842d964e3e76adc63fe1",
+    "tests/unit/test_generated_execution.py": "ad68731cbb9db7d418208a3fdaf5d86bef53dbf3d1026b65c264cb166debb376"
+  }
+}

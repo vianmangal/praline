@@ -1,0 +1,84 @@
+{
+  "sequential": {
+    "source": "/Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c",
+    "source_hash": "fd13a75752c6ebbfefa90139d2cde69abfdc1b588cc47b05d46057a0c1c1f26e",
+    "output": "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential",
+    "target": "sequential",
+    "dependencies": {
+      "/Users/vian/.codex/worktrees/b5f9/segfault/examples/runtime.h": "373c04441c1d87a81b9e571ff77ac4f011ba76ec13910c6dfe12f498244de219"
+    },
+    "status": "ok",
+    "command": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-I",
+      "/Users/vian/.codex/worktrees/b5f9/segfault/examples",
+      "/Users/vian/.codex/worktrees/b5f9/segfault/examples/helper_map.c",
+      "-o",
+      "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/sequential"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "elapsed_seconds": 0.06992999999783933,
+    "environment": {},
+    "compiler": {
+      "path": "/usr/bin/clang",
+      "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+      "openmp_flags": [
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp"
+      ]
+    },
+    "optimization": "-O2"
+  },
+  "generated": {
+    "source": "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/generated.c",
+    "source_hash": "ffc0d144cdc8a9126a7357b1fe9171f6dbacf2971e7ad8fac42be15b6673bed6",
+    "output": "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated",
+    "target": "cpu",
+    "dependencies": {
+      "/Users/vian/.codex/worktrees/b5f9/segfault/examples/runtime.h": "373c04441c1d87a81b9e571ff77ac4f011ba76ec13910c6dfe12f498244de219"
+    },
+    "status": "ok",
+    "command": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-Xpreprocessor",
+      "-fopenmp",
+      "-I/opt/homebrew/opt/libomp/include",
+      "-L/opt/homebrew/opt/libomp/lib",
+      "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+      "-lomp",
+      "-I",
+      "/Users/vian/.codex/worktrees/b5f9/segfault/examples",
+      "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/generated.c",
+      "-o",
+      "/Users/vian/.codex/worktrees/b5f9/segfault/runs/submission/map-cpu/bin/generated"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "elapsed_seconds": 0.061645957990549505,
+    "environment": {},
+    "compiler": {
+      "path": "/usr/bin/clang",
+      "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+      "openmp_flags": [
+        "-Xpreprocessor",
+        "-fopenmp",
+        "-I/opt/homebrew/opt/libomp/include",
+        "-L/opt/homebrew/opt/libomp/lib",
+        "-Wl,-rpath,/opt/homebrew/opt/libomp/lib",
+        "-lomp"
+      ]
+    },
+    "optimization": "-O2"
+  }
+}

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68,<83"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "praline-compiler"
+version = "0.1.0"
+description = "Local C parallelization evidence and execution harness"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2"]
+
+[project.scripts]
+praline = "praline.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["praline*"]
+namespaces = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
