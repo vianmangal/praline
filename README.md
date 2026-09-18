@@ -202,4 +202,4 @@ The project uses Clang rather than ROSE. The [compiler contract](docs/CONTRACT.m
 - [Short abstract](submission/abstract.md)
 - [Demo recording script](submission/video-script.md)
 
-The demo video still needs to be recorded and published.
+The captioned demo video is recorded locally. A public video link is pending upload.
