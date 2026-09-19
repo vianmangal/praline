@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Praline — recorded evidence walkthrough</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101418;color:#eef1f4;font:24px system-ui,sans-serif}main{max-width:1500px;margin:auto;padding:55px 65px}header{display:flex;justify-content:space-between;color:#a8b5bf;font-size:19px}h1{font-size:49px;line-height:1.2;margin:36px 0 16px}p{line-height:1.5;color:#c6d0d7;max-width:1200px}pre{background:#1b2229;border:1px solid #39434c;border-radius:8px;padding:25px;font:23px/1.65 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}section{display:none}section.active{display:block}.tag{color:#9bd5bc;font-weight:600}footer{position:fixed;bottom:38px;left:65px;right:65px;color:#aab7c0;font-size:20px;display:flex;justify-content:space-between}button{padding:15px 22px;font-size:22px;cursor:pointer}#progress{position:fixed;bottom:0;left:0;height:5px;background:#a5cdbb;width:0}table{border-collapse:collapse;width:100%;font-size:24px}td,th{text-align:left;padding:19px;border-bottom:1px solid #39434c}
+</style>
+<main><header><span>PRALINE · SEGFAULT P05</span><span>Recorded evidence · local C11 prototype</span></header>
+<section class="active"><h1>Can this loop safely run in parallel?</h1><p>Praline follows helper-function calls, explains the safety decision, and generates OpenMP code for supported loops.</p><pre>static int apply(int value) { return value * 3 + 1; }
+
+for (int i = 0; i &lt; n; ++i) {
+    output[i] = apply(input[i]);
+}</pre><p>We need to understand the helper's effects and the loop's data dependencies.</p></section>
+<section><h1>Look through the helper call</h1><p class="tag">Safe under the recorded input and alias assumptions</p><pre id="safe">Loading actual analysis…</pre><p>Separate buffers, valid bounds, and independent writes matter. A pure helper by itself does not establish safety.</p></section>
+<section><h1>Generate code. Check every output element.</h1><pre id="cpu">Loading actual generated source…</pre><p id="validation"></p><p>Validation compares tested inputs with sequential execution and an independent reference.</p></section>
+<section><h1>A shared write changes the answer</h1><pre>static int counter = 0;
+static int apply(int value) {
+    counter += 1;
+    return value * 3 + 1;
+}</pre><p class="tag">Unsafe — no parallel transformation</p><pre id="unsafe">Loading actual analysis…</pre></section>
+<section><h1>Safe does not always mean faster</h1><table><tr><th>Recorded workload</th><th>Serial median</th><th>4-thread median</th></tr><tr><td>1,048,576 elements</td><td>0.273 ms</td><td>0.545 ms</td></tr></table><p>This simple helper map was slower with OpenMP on our arm64 Mac. Threading overhead outweighed the benefit.</p><p>Five trials per variant. Kernel times exclude allocation and output formatting. Raw trials and end-to-end timings are retained.</p></section>
+<section><h1>GPU generation with explicit data mapping</h1><pre id="gpu">Loading actual GPU source…</pre><p>GPU source is generated and host syntax-checked. Device execution is unverified; we claim no GPU speedup.</p><p class="tag">github.com/vianmangal/praline</p></section>
+<button id="start" disabled>Loading evidence…</button></main>
+<footer><span id="caption">Actual saved results; this is a walkthrough, not live compilation.</span><span id="page">1 / 6</span></footer><div id="progress"></div>
+<script>
+const sections=[...document.querySelectorAll('section')];let started=0,timer;
+const captions=['Understand what a called function does before parallelizing a loop.','AST-derived effects and dependencies support the decision.','The original file stays unchanged. Tests check actual output.','The helper writes shared state, so concurrent iterations would conflict.','Real measurements include slowdowns, not just favorable results.','CPU execution is validated. GPU device verification remains outstanding.'];
+function show(i){sections.forEach((s,j)=>s.classList.toggle('active',i===j));document.querySelector('#page').textContent=(i+1)+' / 6';document.querySelector('#caption').textContent=captions[i]}
+function reasons(a){return a.loops.map(l=>l.decision.toUpperCase()+'\n\n'+l.reasons.map(r=>r.code+'\n'+r.message).join('\n\n')).join('\n')}
+Promise.all(['map-cpu/analysis.json','global_write/analysis.json','map-cpu/generated.c','map-gpu/generated.c','map-cpu/validation.json'].map(async p=>{const r=await fetch('evidence/'+p);if(!r.ok)throw Error(p);return p.endsWith('.json')?r.json():r.text()})).then(([a,u,c,g,v])=>{
+document.querySelector('#safe').textContent=reasons(a);document.querySelector('#unsafe').textContent=reasons(u);document.querySelector('#cpu').textContent=c.split('\n').filter(l=>!l.startsWith('#include')&&!l.startsWith('int main')).join('\n');document.querySelector('#gpu').textContent=g.split('\n').filter(l=>l.startsWith('#pragma')||l.includes('output[i]')).join('\n');document.querySelector('#validation').textContent=v.status.toUpperCase()+': '+v.cases.filter(x=>x.passed).length+' / '+v.cases.length+' recorded validation cases';const b=document.querySelector('#start');b.disabled=false;b.textContent='Start 90-second walkthrough';b.onclick=()=>{b.hidden=true;started=performance.now();timer=setInterval(()=>{const t=(performance.now()-started)/1000;show(Math.min(5,Math.floor(t/15)));document.querySelector('#progress').style.width=Math.min(100,t/90*100)+'%';if(t>=90){clearInterval(timer);document.querySelector('#caption').textContent='Praline · explainable analysis, generated code, and reproducible evidence.'}},100)};
+}).catch(e=>{document.querySelector('#start').textContent='Evidence could not load: '+e.message});
+</script></html>

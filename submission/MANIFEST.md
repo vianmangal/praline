@@ -8,7 +8,7 @@ Project: Praline
 Track: P05  
 Repository URL: https://github.com/vianmangal/praline  
 Base commit: `8317b178b2259fed244d2f96f5f2c7e29a325dee`. Implementation is uncommitted. This commit alone does not reproduce the recording state. Source-snapshot provenance hashes identify the exact copied files.  
-Video file and URL: **missing recording and publication**  
+Video file: `submission/praline-demo.mp4`, a 92-second captioned OBS walkthrough of actual saved evidence at 1920×1080. No voice narration. Public video URL: pending upload.
 Deck: `submission/deck.pdf` (seven pages) and `submission/deck.pptx` (seven editable slides), local and inspected, not published  
 Abstract: `submission/abstract.md`, 150 words excluding heading  
 Evidence: `submission/evidence/`, actual core-backed analysis, source, diff, validation, raw timings, environment, sanitizer checks and GPU host syntax check  

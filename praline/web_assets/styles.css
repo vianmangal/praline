@@ -70,8 +70,8 @@ button { color: inherit; }
 
 .workspace-page { min-height: 100vh; background: #0b0c0e; }
 .workspace-header { position: sticky; top: 0; background: rgba(10,11,12,.92); backdrop-filter: blur(18px); }
-.local-state { display: flex; align-items: center; gap: 9px; color: #90979b; font-size: 11px; }
-.local-state span { width: 7px; height: 7px; background: var(--safe); border-radius: 50%; box-shadow: 0 0 12px rgba(135,231,186,.55); }
+.local-state { display: flex; align-items: center; color: var(--safe); font-size: 11px; font-weight: 700; }
+.local-state span { display: none; }
 .workspace { width: min(1480px, 100%); margin: 0 auto; padding: 56px clamp(18px, 4vw, 58px) 70px; }
 .workspace-intro { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 38px; }
 .workspace-intro h1 { margin: 0; font-size: clamp(38px, 4vw, 62px); letter-spacing: -.05em; font-weight: 500; }
