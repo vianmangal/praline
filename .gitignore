@@ -10,6 +10,9 @@ scripts/.deck-build/
 submission/*.mp4
 submission/*.mov
 .codex/
+.DS_Store
 tmp/
 output/
 submission/*.tar.gz
+.vercel
+.env*

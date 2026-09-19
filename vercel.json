@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "bash scripts/vercel-install.sh",
+  "functions": {
+    "api/**/*.py": {
+      "maxDuration": 30,
+      "includeFiles": "vendor/**",
+      "excludeFiles": "{tests/**,submission/**,docs/**,scripts/**,examples/**,runs/**,**/__pycache__/**}"
+    }
+  }
+}

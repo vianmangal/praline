@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Praline — Understand parallel C</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="landing">
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Praline home"><span class="brand-mark">P</span><span>PRALINE</span></a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a class="button button-small" href="/analyze">Open analyzer</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Know if your C loop can run in parallel.</h1>
+        <div class="hero-actions">
+          <a class="button" href="/analyze">Analyze your code <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#how">See how it works</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="how" id="how">
+      <div><p class="eyebrow">One clear flow</p><h2>From source to evidence.</h2></div>
+      <ol class="steps">
+        <li><span>01</span><h3>Add your C code</h3><p>Paste a function or drop in a single C source file.</p></li>
+        <li><span>02</span><h3>Run the analysis</h3><p>Praline inspects the loop, its helpers, memory accesses, and assumptions.</p></li>
+        <li><span>03</span><h3>Use the result</h3><p>Read the decision and download generated OpenMP source when it is safe.</p></li>
+      </ol>
+    </section>
+  </main>
+
+</body>
+</html>

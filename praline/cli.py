@@ -246,6 +246,10 @@ def parser():
     q.add_argument('--clang',default='clang')
     q.add_argument('--cc')
     q.add_argument('--timeout',type=float,default=30)
+    q = sub.add_parser('serve', help='Run the local browser interface')
+    q.add_argument('--host', default='127.0.0.1')
+    q.add_argument('--port', type=int, default=8000)
+    q.add_argument('--no-open', action='store_true', help='Do not open a browser automatically')
     return p
 
 
@@ -269,6 +273,12 @@ def main(argv=None):
             if not any((root/n).exists() for n in ('analysis.json','validation.json','doctor.json')):
                 raise ValueError('No run evidence found')
             print(report_directory(root))
+            return 0
+        if args.command == 'serve':
+            if not 0 <= args.port <= 65535:
+                raise ValueError('Port must be between 0 and 65535')
+            from praline.web import serve
+            serve(args.host, args.port, open_browser=not args.no_open)
             return 0
         return demo(args)
     except ValueError as exc:

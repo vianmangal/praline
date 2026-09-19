@@ -19,5 +19,11 @@ praline = "praline.cli:main"
 include = ["praline*"]
 namespaces = true
 
+[tool.setuptools.package-data]
+praline = ["web_assets/*"]
+
+[tool.vercel]
+entrypoint = "api.analyze:handler"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

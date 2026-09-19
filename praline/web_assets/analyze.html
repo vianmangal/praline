@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analyzer — Praline</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="workspace-page">
+  <header class="site-header workspace-header">
+    <a class="brand" href="/"><span class="brand-mark">P</span><span>PRALINE</span></a>
+    <div class="local-state"><span></span> Local compiler</div>
+  </header>
+
+  <main class="workspace">
+    <section class="workspace-intro">
+      <div><p class="eyebrow">Analyzer</p><h1>Check a C loop.</h1><p>Upload a file or paste a complete function with its helper definitions.</p></div>
+    </section>
+
+    <div class="workbench">
+      <section class="source-panel panel">
+        <div class="panel-heading"><div><span class="panel-kicker">INPUT</span><h2>Source code</h2></div></div>
+        <div class="upload-zone" id="drop-zone" tabindex="0" role="button" aria-label="Upload a C source file">
+          <input id="file-input" type="file" accept=".c,text/x-c" hidden>
+          <span class="upload-icon">↑</span><div><strong id="upload-title">Drop a .c file here</strong><small id="upload-copy">or click to browse · single file · maximum 1 MB</small></div>
+        </div>
+        <label class="code-input" for="source-code"><span>Or paste C source</span><textarea id="source-code" spellcheck="false" aria-label="C source code" placeholder="Paste a complete C function or source file here..."></textarea></label>
+
+        <div class="options-row">
+          <fieldset class="target-picker"><legend>Generate for</legend><label><input type="radio" name="target" value="cpu" checked><span>CPU</span></label><label><input type="radio" name="target" value="gpu"><span>GPU</span></label></fieldset>
+          <label class="field gpu-only-field" hidden><span>Buffer extents <em>required for GPU</em></span><input id="extents" value="input=n, output=n" placeholder="input=n, output=n"></label>
+        </div>
+        <p class="target-help" id="target-help">CPU prepares OpenMP code for parallel threads on the processor.</p>
+        <div id="form-error" class="form-error" role="alert" hidden></div>
+        <button class="button analyze-button" id="analyze-button" type="button"><span>Analyze for CPU</span><span aria-hidden="true">→</span></button>
+        <p class="execution-note">This interface analyzes and transforms source. It does not execute uploaded C programs.</p>
+      </section>
+
+      <section class="result-panel panel" id="result-panel" aria-live="polite">
+        <div class="empty-result" id="empty-result"><div class="empty-symbol">P</div><h2>Your result will appear here.</h2><p>Praline will show the safety decision, supporting reasons, assumptions, and selected-target status.</p></div>
+        <div id="loading-result" class="loading-result" hidden><div class="spinner"></div><h2>Reading the program…</h2><p>Following helper calls and checking memory dependencies.</p></div>
+        <div id="result-content" hidden>
+          <div class="result-hero"><div><p class="panel-kicker">DECISION</p><h2 id="decision-title"></h2><p id="decision-copy"></p></div><div class="decision-badge" id="decision-badge"></div></div>
+          <div class="target-result" id="target-result"><div><span id="target-kind"></span><h3 id="target-title"></h3><p id="target-detail"></p></div><div class="target-state" id="target-state"></div></div>
+          <div class="result-tabs" role="tablist"><button class="active" data-tab="reasons">Why this result</button><button data-tab="json">Raw JSON</button></div>
+          <div class="tab-content active" id="tab-reasons"><div id="reason-list"></div><div class="assumptions" id="assumptions-block"><h3>Assumptions</h3><ul id="assumption-list"></ul></div></div>
+          <div class="tab-content" id="tab-json"><div class="code-toolbar"><span>analysis.json</span><button id="download-json" type="button">Download</button></div><pre id="analysis-json"></pre></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

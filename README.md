@@ -49,6 +49,19 @@ Open **`runs/demo/map-cpu/report.html`** in your browser. On macOS:
 open runs/demo/map-cpu/report.html
 ```
 
+## Run the localhost interface
+
+Start the browser interface from the repository root:
+
+```sh
+praline serve
+```
+
+Praline opens `http://127.0.0.1:8000`. From there you can paste C source or
+upload a `.c` file, choose CPU or GPU generation, run the real analysis, inspect
+the decision and download generated source. The localhost interface analyzes
+and transforms source; it does not execute arbitrary uploaded C programs.
+
 The demo analyzes the safe example, generates CPU code, validates its output, records timings, and analyzes several unsafe or uncertain examples. It also generates GPU source.
 
 ## A simple example
