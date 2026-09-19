@@ -195,11 +195,3 @@ python -m pytest -q
 
 The project uses Clang rather than ROSE. The [compiler contract](docs/CONTRACT.md) documents supported inputs, assumptions, and interfaces.
 
-## Submission materials
-
-- [Slide deck (PDF)](submission/deck.pdf)
-- [Editable slide deck (PowerPoint)](submission/deck.pptx)
-- [Short abstract](submission/abstract.md)
-- [Demo recording script](submission/video-script.md)
-
-The demo video still needs to be recorded and published.
